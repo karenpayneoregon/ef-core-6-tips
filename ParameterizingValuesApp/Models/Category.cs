@@ -1,19 +1,16 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ParameterizingValuesApp.Models
+namespace ParameterizingValuesApp.Models;
+
+public class Category
 {
-    public class Category
+    [Key]
+    public int CategoryId { get; set; }
+    public string Description { get; set; }
+    public List<Book> Books { get; set; }
+
+    public Category()
     {
-        [Key]
-        public int CategoryId { get; set; }
-        public string Description { get; set; }
-        public List<Book> Books { get; set; }
-
-        public Category()
-        {
-            Books = new List<Book>();
-        }
+        Books = new List<Book>();
     }
-
-    
 }

@@ -47,7 +47,11 @@ internal class SetupDatabase
 
             context.Categories.Add(new Category() {  Description = "Action"});
             context.Categories.Add(new Category() {  Description = "Comedy"});
+            context.Categories.Add(new Category() {  Description = "Fiction"});
+            context.Categories.Add(new Category() {  Description = "Learn C#"});
+
             await context.SaveChangesAsync();
+
             return (true, null);
         }
         catch (Exception localException)
