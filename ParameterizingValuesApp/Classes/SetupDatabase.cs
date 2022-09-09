@@ -13,6 +13,7 @@ internal class SetupDatabase
 {
     /// <summary>
     /// Used to create the database only if it does not exists
+    /// Does not populate <see cref="Category"/> table
     /// </summary>
     /// <returns></returns>
     public static async Task<(bool success, Exception exception)> InitialCreateDatabase()
@@ -35,7 +36,7 @@ internal class SetupDatabase
     }
 
     /// <summary>
-    /// Used to start over
+    /// Used to start over with some <see cref="Category"/> rows
     /// </summary>
     public static async Task<(bool success, Exception exception)> CreateDatabase()
     {
@@ -45,10 +46,11 @@ internal class SetupDatabase
             await context.Database.EnsureDeletedAsync();
             await context.Database.EnsureCreatedAsync();
 
-            context.Categories.Add(new Category() {  Description = "Action"});
-            context.Categories.Add(new Category() {  Description = "Comedy"});
-            context.Categories.Add(new Category() {  Description = "Fiction"});
+            context.Categories.Add(new Category() {  Description = "Action"  });
+            context.Categories.Add(new Category() {  Description = "Comedy"  });
+            context.Categories.Add(new Category() {  Description = "Fiction" });
             context.Categories.Add(new Category() {  Description = "Learn C#"});
+            context.Categories.Add(new Category() {  Description = "EF Core 6"});
 
             await context.SaveChangesAsync();
 
@@ -56,7 +58,6 @@ internal class SetupDatabase
         }
         catch (Exception localException)
         {
-
             return (false, localException);
         }
     }

@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EntityFrameworkCoreHelpers;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using ParameterizingValuesApp.Classes;
 using ParameterizingValuesApp.Data;
 using ParameterizingValuesApp.Models;
@@ -12,8 +15,7 @@ namespace ParameterizingValuesApp
             //var book = context.Books.FirstOrDefault(x => x.Id == 1);
             //var (success, exception) = await SetupDatabase.CreateDatabase();
 
-            await InsertNewBook();
-
+            //await InsertNewBook();
             Console.WriteLine();
             AnsiConsole.MarkupLine("Press[white on blue] ENTER[/] to close");
             Console.ReadLine();
