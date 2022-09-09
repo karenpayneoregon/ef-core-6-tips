@@ -96,7 +96,11 @@ public static class EntityExtensions
         if (context == null) throw new ArgumentNullException(nameof(context));
 
         var commentList = new List<ModelComment>();
-        IEnumerable<IEntityType> entityTypes = context.GetService<IDesignTimeModel>().Model.GetEntityTypes();
+
+        IEnumerable<IEntityType> entityTypes = context.GetService<IDesignTimeModel>()
+            .Model.GetEntityTypes()
+            .Where(x => x.ClrType.Name == modelName);
+
 
         foreach (IEntityType entityType in entityTypes)
         {

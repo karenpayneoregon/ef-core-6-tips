@@ -250,16 +250,4 @@ namespace EntityCore5Extensions
         public static object[] ToObjectArray<T>(this T[] sender) 
             => sender.OfType<object>().ToArray();
     }
-
-    public class Details
-    {
-        public string Name { get; }
-        public IEnumerable<PropertyInfo> NavigationProperties { get; }
-
-        public Details(string name, IEnumerable<PropertyInfo> navigationProperties)
-        {
-            Name = name;
-            NavigationProperties = navigationProperties;
-        }
-    }
 }
