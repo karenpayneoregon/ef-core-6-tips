@@ -4,6 +4,8 @@ This project shows how to get, if set, comments for models in a DbContext (which
 
 If using EF Core 5, see the project EntityCore5Exensions which will not work with EF Core 6.
 
+:small_blue_diamond: Think of comments for properties for providing information to your applicaton from labels to other useful details.
+
 ## Setting up property comments
 
 For this example there are two models, `Book` and `Category`, in the DbContext, `OnModelCreating` we setup properties with comments as follows.
