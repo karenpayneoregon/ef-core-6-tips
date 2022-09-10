@@ -36,6 +36,19 @@ In the console, perform the following steps
 1. add-migration FirstMigration [![](assets/Link_16x.png)](https://docs.microsoft.com/en-us/ef/core/cli/powershell#add-migration)
 1. Update-Database [![](assets/Link_16x.png)](https://docs.microsoft.com/en-us/ef/core/cli/powershell#update-database)
 
+From Package Manager Console
+
+```
+PM> add-migration FirstMigration
+Build started...
+Build succeeded.
+
+To undo this action, use Remove-Migration.
+PM> Update-Database
+Build started...
+Build succeeded.
+```
+
 Once completed, open SSMS (SQL-Server Management Studio) to the database named `EF.BookCatalog1` defined in `appsettings.json`
 
 Right click on the database `EF.BookCatalog1`, select new query, copy the following SQL into the new query
