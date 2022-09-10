@@ -1,6 +1,8 @@
 ﻿# EF Core 6 get model comments
 
-This project shows how to get, if set, comments for models in a DbContext (which will not work with EF Core 5, see below). The code originally came from EF Core 5 but failed as there were changes to how to get comments/annotations.
+![Main](assets/main.png)
+
+This project shows how to get, and set, comments for models in a DbContext (which will not work with EF Core 5, see below). The code originally came from EF Core 5 but failed as there were changes to how to get comments/annotations.
 
 If using EF Core 5, see the project EntityCore5Exensions which will not work with EF Core 6.
 
@@ -74,6 +76,8 @@ private static async Task AllModelComments()
 }
 ```
 
+# Summary
 
 
-![Main](assets/main.png)
+
+
