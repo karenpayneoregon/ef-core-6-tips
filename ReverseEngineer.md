@@ -144,6 +144,9 @@ Run the project and the following shows the top 20 contacts
 - Read Microsoft [docs](https://docs.microsoft.com/en-us/ef/core/) on EF Core
 - Remove the connection string from `NorthWindContext.cs` and place into `appsettings.json`. Look at the project `ModelCommentsApp`, `appsettings.json` has the connection string. A NuGet package, [ConfigurationLibrary](https://www.nuget.org/packages/ConfigurationLibrary/1.0.1?_src=template) is used to set the connection string in `BookContext.cs` in `OnConfiguring` and note there are several options to log or not log EF Core operations.
 
+# Learn more about EF Power Tools
+
+:book: See Erikj's [Wiki](https://github.com/ErikEJ/EFCorePowerTools/wiki)
 
 [^1]: A POCO entity is a class that doesn't depend on any framework-specific base class. It is like any other normal .NET CLR class, which is why it is called "Plain Old CLR Objects".
 
