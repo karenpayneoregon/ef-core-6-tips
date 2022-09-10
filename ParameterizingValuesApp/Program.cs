@@ -14,7 +14,7 @@ namespace ParameterizingValuesApp
         {
             //var book = context.Books.FirstOrDefault(x => x.Id == 1);
             //var (success, exception) = await SetupDatabase.CreateDatabase();
-
+            await Task.Delay(0);
             //await InsertNewBook();
             Console.WriteLine();
             AnsiConsole.MarkupLine("Press[white on blue] ENTER[/] to close");

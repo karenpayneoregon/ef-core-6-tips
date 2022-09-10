@@ -12,3 +12,7 @@ Hopefully what is provided will assist all levels of developers.
 
 Microsoft Visual Studio 2022
 
+# How to reverse engineer a database
+
+See the following [page](ReverseEngineer.md) to learn how to reverse engineer a new SQL-Server database using EF Power Tools, step by step.
+
