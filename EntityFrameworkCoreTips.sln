@@ -18,6 +18,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityCore5Extensions", "En
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelCommentsApp", "ModelCommentsApp\ModelCommentsApp.csproj", "{9179C678-880A-43AF-89CF-B2E2CBC86110}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ColumnOrderFromMicrosoftApp", "ColumnOrderFromMicrosoftApp\ColumnOrderFromMicrosoftApp.csproj", "{AAECCE01-510C-4513-A019-E93426E9445F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{9179C678-880A-43AF-89CF-B2E2CBC86110}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9179C678-880A-43AF-89CF-B2E2CBC86110}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9179C678-880A-43AF-89CF-B2E2CBC86110}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAECCE01-510C-4513-A019-E93426E9445F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAECCE01-510C-4513-A019-E93426E9445F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAECCE01-510C-4513-A019-E93426E9445F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAECCE01-510C-4513-A019-E93426E9445F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

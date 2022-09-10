@@ -8,6 +8,13 @@ namespace ModelCommentsApp
     {
         static async Task Main(string[] args)
         {
+            //await using var context = new BookContext();
+            //var books = context.Books.ToList();
+
+            //foreach (var book in books)
+            //{
+            //    Console.WriteLine(book.Price);
+            //}
             await AllModelComments();
             Console.ReadLine();
         }
