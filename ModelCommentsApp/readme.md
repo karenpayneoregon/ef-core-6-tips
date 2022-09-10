@@ -8,6 +8,10 @@ If using EF Core 5, see the project EntityCore5Exensions which will not work wit
 
 :small_blue_diamond: Think of comments for properties for providing information to your applicaton from labels to other useful details.
 
+## Setting comments
+
+See the project [ModelCommentsApp1](https://github.com/karenpayneoregon/ef-core-6-tips/tree/master/ModelCommentsApp1) which uses migrations to set column descriptions for each property in the two models into tables in the SQL-Server database.
+
 ## Setting up property comments
 
 For this example there are two models, `Book` and `Category`, in the DbContext, `OnModelCreating` we setup properties with comments as follows.
