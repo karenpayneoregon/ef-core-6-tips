@@ -2,6 +2,8 @@
 using InjectApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
+using System.Diagnostics;
+using Microsoft.Extensions.Logging;
 
 namespace InjectApp.Classes;
 
@@ -22,7 +24,10 @@ public class DbContextFactory : IDesignTimeDbContextFactory<BookContext>
         }
 
         var builder = new DbContextOptionsBuilder<BookContext>();
-        builder.UseSqlServer(_connectionString!);
+
+        builder
+            .UseSqlServer(_connectionString!)
+            .LogTo(message => Debug.WriteLine(message), LogLevel.Information);
 
         return new BookContext(builder.Options);
     }

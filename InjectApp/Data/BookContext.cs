@@ -1,10 +1,5 @@
 ﻿using InjectApp.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace InjectApp.Data
 {
@@ -16,5 +11,7 @@ namespace InjectApp.Data
 
         public DbSet<Book> Books { get; set; }
         public DbSet<Category> Categories { get; set; }
+
+
     }
 }
