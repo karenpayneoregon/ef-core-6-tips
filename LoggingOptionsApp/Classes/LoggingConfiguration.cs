@@ -7,15 +7,21 @@ namespace LoggingOptionsApp.Classes;
 
 internal class LoggingConfiguration
 {
-    private static IConfigurationRoot InitMainConfiguration() =>
-        new ConfigurationBuilder()
+
+    private static T InitOptions<T>(string section) where T : new() 
+        => new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json").Build();
+            .AddJsonFile("appsettings.json")
+            .Build()
+            .GetSection(section)
+            .Get<T>();
 
-    public static T InitOptions<T>(string section) where T : new() 
-        => InitMainConfiguration().GetSection(section).Get<T>();
-
-    public static LoggingOptions LoggingOptions() 
-        =>  InitOptions<Logging>("Logging").LogLevel.Type.GetValueFromEnumMember<LoggingOptions>();
+    /// <summary>
+    /// Get <see cref="LoggingOptions"/> for EF Core 
+    /// </summary>
+    /// <returns></returns>
+    public static LoggingOptions LoggingOptions()
+        => InitOptions<EntityFrameWorkLogging>("EntityFrameWorkLogging")
+            .Type.GetValueFromEnumMember<LoggingOptions>();
 }
 
