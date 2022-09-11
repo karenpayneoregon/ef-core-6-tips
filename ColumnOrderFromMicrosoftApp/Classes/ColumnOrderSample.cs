@@ -154,7 +154,7 @@ public static class ColumnOrderSample
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder                    .EnableSensitiveDataLogging()
+            optionsBuilder.EnableSensitiveDataLogging()
                 .UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=EFCoreSampleColOrder");
 
             if (!_quiet)
