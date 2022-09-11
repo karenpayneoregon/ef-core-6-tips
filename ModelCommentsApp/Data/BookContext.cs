@@ -88,7 +88,7 @@ public class BookContext : DbContext
         optionsBuilder
             .UseSqlServer(ConnectionString())
             .EnableSensitiveDataLogging()
-            .LogTo(new DbContextLogger().Log)
+            .LogTo(new DbContextToFileLogger().Log)
             .EnableDetailedErrors();
 
     }

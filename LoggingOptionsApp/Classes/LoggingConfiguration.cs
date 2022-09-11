@@ -5,9 +5,17 @@ using LoggingOptionsApp.Models;
 
 namespace LoggingOptionsApp.Classes;
 
+/// <summary>
+/// Provides access to appsettings.json
+/// </summary>
 internal class LoggingConfiguration
 {
-
+    /// <summary>
+    /// Read a specific section
+    /// </summary>
+    /// <typeparam name="T">model</typeparam>
+    /// <param name="section">section to get information</param>
+    /// <returns>section strong typed</returns>
     private static T InitOptions<T>(string section) where T : new() 
         => new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())

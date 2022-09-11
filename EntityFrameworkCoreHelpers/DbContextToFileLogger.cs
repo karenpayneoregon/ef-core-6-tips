@@ -9,7 +9,7 @@
 /// were they need the proper permissions to create and write to files.
 /// 
 /// </summary>
-public class DbContextLogger
+public class DbContextToFileLogger
 {
     // ReSharper disable once FieldCanBeMadeReadOnly.Local
     private string _fileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Logs", "Log.txt");
@@ -18,7 +18,7 @@ public class DbContextLogger
     /// Use to override log file name and path
     /// </summary>
     /// <param name="fileName"></param>
-    public DbContextLogger(string fileName)
+    public DbContextToFileLogger(string fileName)
     {
         _fileName = fileName;
     }
@@ -26,7 +26,7 @@ public class DbContextLogger
     /// <summary>
     /// Setup to use default file name for logging
     /// </summary>
-    public DbContextLogger()
+    public DbContextToFileLogger()
     {
 
     }
