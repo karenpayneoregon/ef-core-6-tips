@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace EntityFrameworkCoreHelpers.Models;
 
-namespace EntityFrameworkCoreHelpers.Models
+public enum LoggingOptions
 {
-    public enum LoggingOptions
-    {
-        NoLogging,
-        Debug,
-        File
-    }
+    NoLogging,
+    Debug,
+    File
 }
