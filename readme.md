@@ -23,6 +23,8 @@ Projects in this solution
 | ModelCommentsApp1 |  | Migrations |
 | ParameterizingValuesApp |  |  |
 | NorthWind2020ConsoleApp | An example of a self-referencing table for managers and workers | Originally .NET Core 5, EF Core 5 and was updated to .NET Core 6, EF Core 6. |
+| ValueConversionsEncryptProperty | An example for encrypting string via EF Core HasConversion | Based off a Microsoft sample |
+| NorthWindContactsApp | Example on using EF Core in a Windows Forms project | Based off a Microsoft sample |
 |  |  |  |
 
 # Requires
