@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 
@@ -14,6 +15,7 @@ public static class EntityExtensions
     /// </summary>
     /// <param name="context">active DbContext</param>
     /// <returns></returns>
+    [DebuggerStepThrough]
     public static async Task<(bool success, Exception exception)> CanConnectAsync(this DbContext context)
     {
         try
