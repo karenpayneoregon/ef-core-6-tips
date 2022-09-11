@@ -22,7 +22,7 @@ Projects in this solution
 | ModelCommentsApp |  |  |
 | ModelCommentsApp1 |  | Migrations |
 | ParameterizingValuesApp |  |  |
-| NorthWind2020ConsoleApp | An example of a self-referencing table for managers and workers |  |
+| NorthWind2020ConsoleApp | An example of a self-referencing table for managers and workers | Originally .NET Core 5, EF Core 5 and was updated to .NET Core 6, EF Core 6. |
 |  |  |  |
 
 # Requires
