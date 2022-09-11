@@ -17,11 +17,12 @@ Projects in this solution
 | EntityCore5Extensions |  |  |
 | EntityFrameworkCoreHelpers |  |  |
 | ExtensionsLibrary |  |  |
-| ColumnOrderFromMicrosoftApp |  |  |
+| ColumnOrderFromMicrosoftApp |  | This code is from Microsoft with minor changes by Karen Payne |
 | LoggingOptionsApp |  |  |
 | ModelCommentsApp |  |  |
-| ModelCommentsApp1 |  |  |
+| ModelCommentsApp1 |  | Migrations |
 | ParameterizingValuesApp |  |  |
+| NorthWind2020ConsoleApp | An example of a self-referencing table for managers and workers |  |
 |  |  |  |
 
 # Requires
