@@ -8,9 +8,26 @@ Also, there are several code samples taken from Microsoft and are marked so in t
 
 Hopefully what is provided will assist all levels of developers.
 
+# Projects
+
+Projects in this solution
+
+| Project        |   Description    |   Notes |
+|:------------- |:-------------|:-------------|
+| EntityCore5Extensions |  |  |
+| EntityFrameworkCoreHelpers |  |  |
+| ExtensionsLibrary |  |  |
+| ColumnOrderFromMicrosoftApp |  |  |
+| LoggingOptionsApp |  |  |
+| ModelCommentsApp |  |  |
+| ModelCommentsApp1 |  |  |
+| ParameterizingValuesApp |  |  |
+|  |  |  |
+
 # Requires
 
-Microsoft Visual Studio 2022
+- Microsoft Visual Studio 2022 or higher
+- SSMS (SQL-Server Management Studio) is optional but will make life easier
 
 # How to reverse engineer a database
 
