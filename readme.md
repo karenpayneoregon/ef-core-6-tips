@@ -36,3 +36,13 @@ Projects in this solution
 
 See the following [page](ReverseEngineer.md) to learn how to reverse engineer a new SQL-Server database using EF Power Tools, step by step.
 
+# Resources
+
+- Entity Framework Core docs [![](assets/Link_16x.png)](https://docs.microsoft.com/en-us/ef/core/)
+- Querying Data [![](assets/Link_16x.png)](https://docs.microsoft.com/en-us/ef/core/querying/)
+- Saving Data [![](assets/Link_16x.png)](https://docs.microsoft.com/en-us/ef/core/saving/)
+- Database Providers [![](assets/Link_16x.png)](https://docs.microsoft.com/en-us/ef/core/providers/?tabs=dotnet-core-cli)
+- EF Core Value Conversions [![](assets/Link_16x.png)](https://github.com/karenpayneoregon/ef-core-transforming)
+- EF Core: Working with TimeOnly [![](assets/Link_16x.png)](https://github.com/karenpayneoregon/ef-core-dateonly-timeonly)
+- Using EF Core and Bogus [![](assets/Link_16x.png)](https://github.com/karenpayneoregon/learn-bogus-efcore)
+- Port from EF6 to EF Core [![](assets/Link_16x.png)](https://docs.microsoft.com/en-us/ef/efcore-and-ef6/porting/)
