@@ -22,10 +22,10 @@ internal partial class Program
             AnsiConsole.Write(table);
         }
 
-
         Console.WriteLine();
         AnsiConsole.MarkupLine("[white on blue]Press a key to exit[/]");
         Console.ReadLine();
 
     }
+
 }

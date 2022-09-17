@@ -32,7 +32,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExtensionsLibrary", "Extens
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthWind2020ConsoleApp", "NorthWind2020ConsoleApp\NorthWind2020ConsoleApp.csproj", "{A7F335D8-55DA-400B-A958-E43B9644D633}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InjectApp", "InjectApp\InjectApp.csproj", "{E7F9EB35-23A9-46F4-AD3B-280D29A231DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InjectApp", "InjectApp\InjectApp.csproj", "{E7F9EB35-23A9-46F4-AD3B-280D29A231DD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Console projects", "Console projects", "{8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}"
 EndProject
@@ -40,7 +40,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetStartedWinForms", "GetSt
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows forms projects", "Windows forms projects", "{B53A62BA-F808-461D-904B-657C3AD99F28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueConversionsEncryptProperty", "ValueConversionsEncryptProperty\ValueConversionsEncryptProperty.csproj", "{466C8AFC-2677-4672-B2D1-AF8C815E0136}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValueConversionsEncryptProperty", "ValueConversionsEncryptProperty\ValueConversionsEncryptProperty.csproj", "{466C8AFC-2677-4672-B2D1-AF8C815E0136}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxpayerLibraryEntityVersion", "TaxpayerLibraryEntityVersion\TaxpayerLibraryEntityVersion.csproj", "{560E1F24-71C6-44EC-AB63-55025CEFEBDB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxpayerMocking", "TaxpayerMocking\TaxpayerMocking.csproj", "{C371CDD6-7F92-4338-AD0D-B5EE170A8ED5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxpayersChanges", "TaxpayersChanges\TaxpayersChanges.csproj", "{B0490879-107C-4FFD-8EDA-2385AD6C67DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -100,6 +106,18 @@ Global
 		{466C8AFC-2677-4672-B2D1-AF8C815E0136}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{466C8AFC-2677-4672-B2D1-AF8C815E0136}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{466C8AFC-2677-4672-B2D1-AF8C815E0136}.Release|Any CPU.Build.0 = Release|Any CPU
+		{560E1F24-71C6-44EC-AB63-55025CEFEBDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{560E1F24-71C6-44EC-AB63-55025CEFEBDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{560E1F24-71C6-44EC-AB63-55025CEFEBDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{560E1F24-71C6-44EC-AB63-55025CEFEBDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C371CDD6-7F92-4338-AD0D-B5EE170A8ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C371CDD6-7F92-4338-AD0D-B5EE170A8ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C371CDD6-7F92-4338-AD0D-B5EE170A8ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C371CDD6-7F92-4338-AD0D-B5EE170A8ED5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0490879-107C-4FFD-8EDA-2385AD6C67DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0490879-107C-4FFD-8EDA-2385AD6C67DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0490879-107C-4FFD-8EDA-2385AD6C67DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0490879-107C-4FFD-8EDA-2385AD6C67DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -118,6 +136,9 @@ Global
 		{E7F9EB35-23A9-46F4-AD3B-280D29A231DD} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 		{875CBCCA-E986-4A89-9C5A-67846D5DEEEA} = {B53A62BA-F808-461D-904B-657C3AD99F28}
 		{466C8AFC-2677-4672-B2D1-AF8C815E0136} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
+		{560E1F24-71C6-44EC-AB63-55025CEFEBDB} = {CA35389C-A6AB-4CCA-9C0C-FB3357D708A0}
+		{C371CDD6-7F92-4338-AD0D-B5EE170A8ED5} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
+		{B0490879-107C-4FFD-8EDA-2385AD6C67DB} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DBEB0F0-6457-4ACB-AE0F-750843B1232C}
