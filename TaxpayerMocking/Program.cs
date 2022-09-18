@@ -12,7 +12,7 @@ namespace TaxpayerMocking
         static async Task Main(string[] args)
         {
 
-            SetupDatabase.Initialize(15);
+            SetupDatabase.Initialize(5);
             List<Taxpayer> taxpayerList = SetupDatabase.GetTaxpayers();
 
             /*

@@ -10,7 +10,8 @@ namespace TaxpayersChanges
     {
         static async Task Main(string[] args)
         {
-            await UpdateWithDatabaseValues();
+            
+            await UpdateFavorLocal();
 
 
             Console.WriteLine("done");

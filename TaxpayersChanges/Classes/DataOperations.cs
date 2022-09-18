@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -62,27 +63,42 @@ namespace TaxpayersChanges.Classes
                 }
                 catch (DbUpdateConcurrencyException ex)
                 {
+                    
+                    const string header = "Name                     Local value               Database value";
+
                     foreach (var entry in ex.Entries)
                     {
                         if (entry.Entity is Taxpayer)
                         {
-                            var proposedValues = entry.CurrentValues;
-                            var databaseValues = await entry.GetDatabaseValuesAsync();
+                            PropertyValues proposedValues = entry.CurrentValues;
+                            PropertyValues? databaseValues = await entry.GetDatabaseValuesAsync();
 
-                            foreach (var property in proposedValues.Properties)
+                            StringBuilder builder = new();
+
+                            builder.AppendLine("");
+                            builder.AppendLine($"{nameof(DataOperations)}.{nameof(UpdateWithCurrentLocalValues)}");
+                            builder.AppendLine("DbUpdateConcurrencyException");
+                            builder.AppendLine(header);
+
+                            foreach (IProperty property in proposedValues.Properties)
                             {
-                                var name = property.Name;
-                                var proposedValue = proposedValues[property];
-                                var databaseValue = databaseValues![property];
 
-                                // decide which value should be written to database, here we
-                                // use the values sent by the caller
+                                var name = property.Name;
+
+                                var value = proposedValues[property];
+                                builder.AppendLine($"{name,-24} {value,-25} {databaseValues![property]}");
+
+                                var proposedValue = proposedValues[property];
+
                                 proposedValues[property] = proposedValue;
                             }
 
+                            // let's record values to file
+                            SeriControl.Instance.Logger.Information(builder.ToString());
+
                             entry.OriginalValues.SetValues(databaseValues!);
                         }
-                        else
+                        else ;
                         {
                             return (false, new NotSupportedException(
                                 "Don't know how to handle concurrency conflicts for " + 
@@ -130,7 +146,7 @@ namespace TaxpayersChanges.Classes
                                 var databaseValue = databaseValues![property];
 
                                 // decide which value should be written to database, here we
-                                // use the values sent by the caller
+                                // use the values sent by the caller in this case from the database
                                 proposedValues[property] = databaseValue;
                             }
 
