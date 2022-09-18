@@ -192,9 +192,6 @@ public static async Task<(bool, NotSupportedException)> UpdateWithCurrentLocalVa
                     {
 
                         var name = property.Name;
-
-
-
                         var value = proposedValues[property];
                         var dbValue = databaseValues?[property];
                         if (property.IsKey())
@@ -260,6 +257,37 @@ public static async Task<(bool, DbUpdateConcurrencyException ex)> Update(Taxpaye
         SeriControl.Instance.Logger.Information(builder.ToString());
         return (false, ex);
     }
+
+}
+```
+
+# Peeking at changes
+
+This method can be helpful to examine changes, in this case of a Taxpayer prior to executing SaveChanges for validation or for learning purposes.
+
+```csharp
+public static Task<List<EntityChangeItem>> GetChanges( Taxpayer taxpayer)
+{
+
+    List<EntityChangeItem> changes = new();
+
+    var entry = OedContext.Entry(taxpayer);
+
+    foreach (IProperty item in entry.CurrentValues.Properties)
+    {
+        PropertyEntry propEntry = entry.Property(item.Name);
+
+        if (!propEntry.IsModified) continue;
+
+        changes.Add(new EntityChangeItem()
+        {
+            PropertyName = item.Name,
+            OriginalValue = propEntry.OriginalValue,
+            CurrentValue = propEntry.CurrentValue
+        });
+    }
+
+    return Task.FromResult(changes);
 
 }
 ```
