@@ -1,5 +1,7 @@
 ﻿# EF Core Handling Concurrency Conflicts
 
+![S1](assets/s1.png)
+
 [From Microsoft](https://learn.microsoft.com/en-us/ef/core/saving/concurrency)
 
 *Database concurrency refers to situations in which multiple processes or users access or change the same data in a database at the same time. Concurrency control refers to specific mechanisms used to ensure data consistency in presence of concurrent changes.*
@@ -34,7 +36,7 @@ StartDate                8/19/2003 5:04:01 AM      8/18/2021 12:00:00 AM
 
 # Concurrency check setup
 
-To setup for concurrency checks, in the model below we use `[ConcurrencyCheck]` on properties in a model we want to know about concurrency violations.
+To setup for concurrency checks, in the model below we use [ConcurrencyCheck](https://learn.microsoft.com/en-us/dotnet/api/system.componentmodel.dataannotations.concurrencycheckattribute?view=net-6.0) on properties in a model we want to know about concurrency violations.
 
 ```csharp
 public class Taxpayer
@@ -266,12 +268,17 @@ public static async Task<(bool, DbUpdateConcurrencyException ex)> Update(Taxpaye
 
 Only the favor local changes does a detailed log while the others don't but there is no reason a developer could not add this code. I left it this way as some developer may not carry to log the details when a violation occurs.
 
+# See also
+
+- [Handling Concurrency Conflicts](https://learn.microsoft.com/en-us/ef/core/saving/concurrency)
+- [Concurrency Tokens](https://learn.microsoft.com/en-us/ef/core/modeling/concurrency?tabs=data-annotations)
+
 # Summary
 
+What has been presented provides basic to intermediate level code samples for dealing with handling honcurrency conflicts so that in your application that has the possibility of others working on the same record to understand how to deal with this possibility no matter how remote it maybe it is highly recommended to consider one of the three options presented.
 
 
 
 
 
-[Handling Concurrency Conflicts](https://learn.microsoft.com/en-us/ef/core/saving/concurrency)
 

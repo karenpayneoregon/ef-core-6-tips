@@ -206,6 +206,5 @@ namespace TaxpayersConcurrencyCheck.Classes
 
         }
 
-
     }
 }

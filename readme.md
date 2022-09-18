@@ -14,13 +14,14 @@ Projects in this solution
 
 | Project        |   Description    |   Notes |
 |:------------- |:-------------|:-------------|
-| EntityCore5Extensions |  |  |
-| EntityFrameworkCoreHelpers |  |  |
-| ExtensionsLibrary |  |  |
+| EntityCore5Extensions | Various helper methods | EF Core 5 |
+| EntityFrameworkCoreHelpers | Various helper methods | EF Core 6 |
+| ExtensionsLibrary | Helper language extensions |  |
 | ColumnOrderFromMicrosoftApp |  | This code is from Microsoft with minor changes by Karen Payne |
-| LoggingOptionsApp |  |  |
-| ModelCommentsApp |  |  |
-| ModelCommentsApp1 |  | Migrations |
+| TaxpayersConcurrencyCheck | Handling Concurrency Conflicts |  |
+| LoggingOptionsApp | How to use EF Core 6 logging w/o dependency injection |  |
+| ModelCommentsApp | Shows how to get, and set, comments for models in a DbContext |  |
+| ModelCommentsApp1 | Shows how to create comments for each property in a model | Migrations |
 | ParameterizingValuesApp |  |  |
 | NorthWind2020ConsoleApp | An example of a self-referencing table for managers and workers | Originally .NET Core 5, EF Core 5 and was updated to .NET Core 6, EF Core 6. |
 | ValueConversionsEncryptProperty | An example for encrypting string via EF Core HasConversion | Based off a Microsoft sample |
