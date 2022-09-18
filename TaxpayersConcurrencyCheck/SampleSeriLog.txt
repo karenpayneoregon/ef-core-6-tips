@@ -1,0 +1,17 @@
+﻿2022-09-18 09:12:41.227 -07:00 [INF] There were conflicts, aborting saving data
+DataOperations.Update
+
+2022-09-18 09:17:57.689 -07:00 [INF] There were conflicts, aborting saving data
+In DataOperations.Update
+Using values from the database
+
+2022-09-18 09:18:33.260 -07:00 [INF] 
+DataOperations.UpdateWithCurrentLocalValues
+DbUpdateConcurrencyException
+Name                     Local value               Database value
+Key                      1
+FirstName                Karen                     Dummy first name
+LastName                 Payne                     Dummy last name
+Pin                      4873                      8053
+SSN                      111223333                 866801328
+StartDate                8/19/2003 5:04:01 AM      8/18/2021 12:00:00 AM

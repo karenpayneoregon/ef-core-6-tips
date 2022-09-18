@@ -1,7 +1,4 @@
-﻿using Newtonsoft.Json;
-using System.Text.Json;
-using System.Text.Json.Serialization;
-using TaxpayerLibraryEntityVersion.Classes;
+﻿using TaxpayerLibraryEntityVersion.Classes;
 using TaxpayerLibraryEntityVersion.Models;
 using TaxpayerMocking.Classes;
 

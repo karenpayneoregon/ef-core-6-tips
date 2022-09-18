@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
 using TaxpayerLibraryEntityVersion.Classes;
 using TaxpayerLibraryEntityVersion.Models;
-using TaxpayersChanges.Classes;
+using TaxpayersConcurrencyCheck.Classes;
 
-namespace TaxpayersChanges
+namespace TaxpayersConcurrencyCheck
 {
     internal partial class Program
     {
@@ -12,12 +11,19 @@ namespace TaxpayersChanges
         {
             
             await UpdateFavorLocal();
+            //await UpdateWithDatabaseValues();
+            //await UpdateNot();
+            //await PeekChanges();
 
 
-            Console.WriteLine("done");
+            Console.WriteLine();
+            AnsiConsole.MarkupLine("[black on cyan]Done[/]");
             Console.ReadLine();
         }
 
+        /// <summary>
+        /// Shows using database values on <see cref="DbUpdateConcurrencyException"/>
+        /// </summary>
         private static async Task UpdateWithDatabaseValues()
         {
             int id = 1;
@@ -35,6 +41,9 @@ namespace TaxpayersChanges
             var (success, exception) = await DataOperations.UpdateWithCurrentDatabaseValues(taxpayer);
         }
 
+        /// <summary>
+        /// Shows using local values on <see cref="DbUpdateConcurrencyException"/>
+        /// </summary>
         private static async Task UpdateFavorLocal()
         {
             int id = 1;
@@ -48,10 +57,15 @@ namespace TaxpayersChanges
             taxpayer.FirstName = "Karen";
             taxpayer.LastName = "Payne";
             taxpayer.Pin = "4873";
+            taxpayer.SSN = "111223333";
             taxpayer.StartDate = date.Next();
             var (success, exception) = await DataOperations.UpdateWithCurrentLocalValues(taxpayer);
         }
 
+        /// <summary>
+        /// Perform no updates
+        /// </summary>
+        /// <returns></returns>
         private static async Task UpdateNot()
         {
             int id = 1;

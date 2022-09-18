@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.EntityFrameworkCore.Metadata;
 using TaxpayerLibraryEntityVersion.Data;
 using TaxpayerLibraryEntityVersion.Models;
 
-namespace TaxpayersChanges.Classes
+namespace TaxpayersConcurrencyCheck.Classes
 {
     internal class DataOperations
     {
-        public static OedContext OedContext = new OedContext();
+        public static OedContext OedContext = new();
         public static async Task<Taxpayer> GetTaxpayerByIdentity(int id)
         {
             return (await OedContext.Taxpayer.FirstOrDefaultAsync(payer => payer.Id == id))!;
         }
+
         public static Task<List<EntityChangeItem>> GetChanges( Taxpayer taxpayer)
         {
 
@@ -52,21 +48,23 @@ namespace TaxpayersChanges.Classes
         public static async Task<(bool, NotSupportedException)> UpdateWithCurrentLocalValues(Taxpayer taxpayer)
         {
             var saved = false;
-
+            int iteration = 1;
             while (!saved)
             {
                 try
                 {
+                    AnsiConsole.MarkupLine($"[cyan]Invoking save changes[/] [white on blue]{iteration}[/]");
+                    iteration++;
                     await OedContext.SaveChangesAsync();
                     saved = true;
                     return (true, null)!;
                 }
                 catch (DbUpdateConcurrencyException ex)
                 {
-                    
+                    AnsiConsole.MarkupLine("[red]In catch[/]");
                     const string header = "Name                     Local value               Database value";
 
-                    foreach (var entry in ex.Entries)
+                    foreach (EntityEntry entry in ex.Entries)
                     {
                         if (entry.Entity is Taxpayer)
                         {
@@ -84,26 +82,36 @@ namespace TaxpayersChanges.Classes
                             {
 
                                 var name = property.Name;
-
+                                
                                 var value = proposedValues[property];
-                                builder.AppendLine($"{name,-24} {value,-25} {databaseValues![property]}");
+                                var dbValue = databaseValues?[property];
+                                if (property.IsKey())
+                                {
+                                    builder.AppendLine($"Key {value,22}");
+                                }
 
+                                if (!value!.Equals(dbValue))
+                                {
+                                    builder.AppendLine($"{name,-24} {value,-25} {databaseValues![property]}");
+                                }
                                 var proposedValue = proposedValues[property];
 
                                 proposedValues[property] = proposedValue;
                             }
 
                             // let's record values to file
+                            AnsiConsole.MarkupLine("[cyan]Writing to log[/]");
                             SeriControl.Instance.Logger.Information(builder.ToString());
 
+                            AnsiConsole.MarkupLine("[cyan]Setting to local values[/]");
                             entry.OriginalValues.SetValues(databaseValues!);
                         }
-                        else ;
+                        else 
                         {
+
                             return (false, new NotSupportedException(
                                 "Don't know how to handle concurrency conflicts for " + 
                                 entry.Metadata.Name));
-
 
                         }
                     }
@@ -145,12 +153,18 @@ namespace TaxpayersChanges.Classes
                                 var proposedValue = proposedValues[property];
                                 var databaseValue = databaseValues![property];
 
-                                // decide which value should be written to database, here we
-                                // use the values sent by the caller in this case from the database
                                 proposedValues[property] = databaseValue;
                             }
 
+                            StringBuilder builder = new();
+                            builder.AppendLine("There were conflicts, aborting saving data");
+                            builder.AppendLine($"In {nameof(DataOperations)}.{nameof(Update)}");
+                            builder.AppendLine("Using values from the database");
+                            SeriControl.Instance.Logger.Information(builder.ToString());
+
                             entry.OriginalValues.SetValues(databaseValues!);
+
+                            
                         }
                         else
                         {
@@ -182,6 +196,11 @@ namespace TaxpayersChanges.Classes
             }
             catch (DbUpdateConcurrencyException ex)
             {
+                StringBuilder builder = new();
+                builder.AppendLine("There were conflicts, aborting saving data");
+                builder.AppendLine($"In {nameof(DataOperations)}.{nameof(Update)}");
+                builder.AppendLine("This is correct for this method");
+                SeriControl.Instance.Logger.Information(builder.ToString());
                 return (false, ex);
             }
 

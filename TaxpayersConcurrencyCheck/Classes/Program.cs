@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 // ReSharper disable once CheckNamespace
-namespace TaxpayersChanges
+namespace TaxpayersConcurrencyCheck
 {
     internal partial class Program
     {
@@ -17,7 +17,8 @@ namespace TaxpayersChanges
             Console.Title = "Code sample: EF Core get property original and current values";
             WindowUtility.SetConsoleWindowPosition(WindowUtility.AnchorWindow.Center);
         }
-        private static Table CreateTaxpayerChangesViewTable()
+
+        public static Table CreateTaxpayerChangesViewTable()
         {
             return new Table()
                 .RoundedBorder().BorderColor(Color.LightSlateGrey)

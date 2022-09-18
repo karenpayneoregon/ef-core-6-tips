@@ -46,7 +46,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxpayerLibraryEntityVersio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxpayerMocking", "TaxpayerMocking\TaxpayerMocking.csproj", "{C371CDD6-7F92-4338-AD0D-B5EE170A8ED5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxpayersChanges", "TaxpayersChanges\TaxpayersChanges.csproj", "{B0490879-107C-4FFD-8EDA-2385AD6C67DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxpayersConcurrencyCheck", "TaxpayersConcurrencyCheck\TaxpayersConcurrencyCheck.csproj", "{22010BDF-7C29-4979-8A8C-E4861F337F89}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -114,10 +114,10 @@ Global
 		{C371CDD6-7F92-4338-AD0D-B5EE170A8ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C371CDD6-7F92-4338-AD0D-B5EE170A8ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C371CDD6-7F92-4338-AD0D-B5EE170A8ED5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B0490879-107C-4FFD-8EDA-2385AD6C67DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B0490879-107C-4FFD-8EDA-2385AD6C67DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B0490879-107C-4FFD-8EDA-2385AD6C67DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B0490879-107C-4FFD-8EDA-2385AD6C67DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22010BDF-7C29-4979-8A8C-E4861F337F89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22010BDF-7C29-4979-8A8C-E4861F337F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22010BDF-7C29-4979-8A8C-E4861F337F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22010BDF-7C29-4979-8A8C-E4861F337F89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,7 +138,7 @@ Global
 		{466C8AFC-2677-4672-B2D1-AF8C815E0136} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 		{560E1F24-71C6-44EC-AB63-55025CEFEBDB} = {CA35389C-A6AB-4CCA-9C0C-FB3357D708A0}
 		{C371CDD6-7F92-4338-AD0D-B5EE170A8ED5} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
-		{B0490879-107C-4FFD-8EDA-2385AD6C67DB} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
+		{22010BDF-7C29-4979-8A8C-E4861F337F89} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DBEB0F0-6457-4ACB-AE0F-750843B1232C}

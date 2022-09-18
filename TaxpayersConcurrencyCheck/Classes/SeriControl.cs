@@ -2,7 +2,7 @@
 using Serilog;
 using Serilog.Core;
 
-namespace TaxpayersChanges.Classes;
+namespace TaxpayersConcurrencyCheck.Classes;
 
 public sealed class SeriControl
 {
