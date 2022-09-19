@@ -9,6 +9,11 @@ public class SecurityHelpers
     /// Not recommended for a real app
     /// </summary>
     private static string keyString = "E546C8DF278CD5931069B522E695D4F2";
+    /// <summary>
+    /// Encrypt string using <see cref="keyString"/>
+    /// </summary>
+    /// <param name="text">text to encrypt</param>
+    /// <returns>Encrypted string</returns>
     public static string EncryptString(string text)
     {
         var key = Encoding.UTF8.GetBytes(keyString);
@@ -39,7 +44,11 @@ public class SecurityHelpers
             }
         }
     }
-
+    /// <summary>
+    /// Decrypt string encryped with <see cref="EncryptString"/> using <see cref="keyString"/>
+    /// </summary>
+    /// <param name="cipherText">Text to decrypt</param>
+    /// <returns>Decrypted string</returns>
     public static string DecryptString(string cipherText)
     {
         var fullCipher = Convert.FromBase64String(cipherText);
