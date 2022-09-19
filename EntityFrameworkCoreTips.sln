@@ -48,6 +48,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxpayerMocking", "Taxpayer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxpayersConcurrencyCheck", "TaxpayersConcurrencyCheck\TaxpayersConcurrencyCheck.csproj", "{22010BDF-7C29-4979-8A8C-E4861F337F89}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbContextPooling", "DbContextPooling\DbContextPooling.csproj", "{7A53DD7F-8E01-4F05-B65F-600058017396}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -118,6 +120,10 @@ Global
 		{22010BDF-7C29-4979-8A8C-E4861F337F89}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22010BDF-7C29-4979-8A8C-E4861F337F89}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22010BDF-7C29-4979-8A8C-E4861F337F89}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A53DD7F-8E01-4F05-B65F-600058017396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A53DD7F-8E01-4F05-B65F-600058017396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A53DD7F-8E01-4F05-B65F-600058017396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A53DD7F-8E01-4F05-B65F-600058017396}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -139,6 +145,7 @@ Global
 		{560E1F24-71C6-44EC-AB63-55025CEFEBDB} = {CA35389C-A6AB-4CCA-9C0C-FB3357D708A0}
 		{C371CDD6-7F92-4338-AD0D-B5EE170A8ED5} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 		{22010BDF-7C29-4979-8A8C-E4861F337F89} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
+		{7A53DD7F-8E01-4F05-B65F-600058017396} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DBEB0F0-6457-4ACB-AE0F-750843B1232C}
