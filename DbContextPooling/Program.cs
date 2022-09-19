@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
 using DbContextPooling.Classes;
+using DbContextPooling.Controllers;
+using DbContextPooling.Data;
 
 namespace DbContextPooling
 {
@@ -44,7 +46,7 @@ namespace DbContextPooling
                 {
                     var blog = await new BlogController(serviceScope.ServiceProvider.GetService<BloggingContext>())
                         .GetBlogAsync();
-                    //Console.WriteLine(blog.Name);
+                   
                 }
 
                 Interlocked.Increment(ref _requestsProcessed);

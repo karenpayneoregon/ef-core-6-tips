@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using DbContextPooling.Data;
+using DbContextPooling.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace DbContextPooling.Classes;
+namespace DbContextPooling.Controllers;
 
 public class BlogController
 {

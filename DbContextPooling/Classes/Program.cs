@@ -1,11 +1,7 @@
-﻿using DbContextPooling.Classes;
+﻿using DbContextPooling.Data;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using DbContextPooling.Models;
 
 // ReSharper disable once CheckNamespace
 namespace DbContextPooling
@@ -16,7 +12,7 @@ namespace DbContextPooling
         public static void Init()
         {
             AnsiConsole.MarkupLine("");
-            Console.Title = "Code sample";
+            Console.Title = "Code sample: AddDbContextPool";
             WindowUtility.SetConsoleWindowPosition(WindowUtility.AnchorWindow.Center);
         }
 

@@ -1,4 +1,4 @@
-﻿namespace DbContextPooling.Classes;
+﻿namespace DbContextPooling.Models;
 
 public class Blog
 {
