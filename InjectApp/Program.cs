@@ -8,8 +8,9 @@ internal partial class Program
     static async Task Main(string[] args)
     {
 
-        await using (var context = new DbContextFactory().CreateDbContext())
+        if (DatabaseExists())
         {
+            await using var context = new DbContextFactory().CreateDbContext();
             var books = await context.Books.Include(x => x.Category).ToListAsync();
 
             Table table = CreateTable();
@@ -20,10 +21,16 @@ internal partial class Program
             }
 
             AnsiConsole.Write(table);
+
+            Console.WriteLine();            
+        }
+        else
+        {
+            AnsiConsole.MarkupLine("[white on red]Must create the database[/]");
         }
 
-        Console.WriteLine();
-        AnsiConsole.MarkupLine("[white on blue]Press a key to exit[/]");
+
+        //AnsiConsole.MarkupLine("[white on blue]Press a key to exit[/]");
         Console.ReadLine();
 
     }

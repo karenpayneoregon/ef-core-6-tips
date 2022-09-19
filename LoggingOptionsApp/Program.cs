@@ -10,7 +10,7 @@ namespace LoggingOptionsApp
         static async Task Main(string[] args)
         {
 
-            await SetupDatabase.CreateDatabase();
+            //await SetupDatabase.CreateDatabase();
 
             await using var context = new BookContext();
 

@@ -19,6 +19,11 @@ namespace InjectApp
             Render(new Rule($"[cyan]Books[/]").RuleStyle(Style.Parse("white")).Centered());
         }
 
+        private static bool DatabaseExists()
+        {
+            string path = Directory.GetParent(Environment.GetFolderPath(Environment.SpecialFolder.Personal))!.FullName;
+            return File.Exists(Path.Combine(path, "EF.BookCatalog.mdf"));
+        }
         private static void Render(Rule rule)
         {
             AnsiConsole.Write(rule);
