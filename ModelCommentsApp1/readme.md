@@ -94,6 +94,25 @@ Running the above will produce
 
 ![Sql Descriptions](assets/sql_descriptions.png)
 
+# Database comments are scaffolded to code comments
+
+For EF Core 6, Comments on SQL tables and columns are now scaffolded into the entity types created when [reverse-engineering](https://learn.microsoft.com/en-us/ef/core/managing-schemas/scaffolding/?tabs=dotnet-core-cli) an EF Core model from an existing SQL Server database.
+
+```csharp
+/// <summary>
+/// The Blog table.
+/// </summary>
+public partial class Blog
+{
+    /// <summary>
+    /// The primary key.
+    /// </summary>
+    [Key]
+    public int Id { get; set; }
+}
+```
+
+
 # Summary
 
 In this code sample you learned how to integrate code to set the `Description` properties of columns for each column in a new database using migrations.
