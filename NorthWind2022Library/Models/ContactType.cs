@@ -20,5 +20,8 @@ namespace NorthWind2022Library.Models
         public virtual ICollection<Contacts> Contacts { get; set; }
         public virtual ICollection<Customers> Customers { get; set; }
         public virtual ICollection<Employees> Employees { get; set; }
+
+        public override string ToString() => ContactTitle;
+
     }
 }
