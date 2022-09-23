@@ -52,6 +52,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbContextPooling", "DbConte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthToBindingListWinForms", "NorthToBindingListWinForms\NorthToBindingListWinForms.csproj", "{00C0C63D-C137-40C6-82E3-74674D6E83FB}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelectiveUpdatesApp", "SelectiveUpdatesApp\SelectiveUpdatesApp.csproj", "{BD0D96F4-7D9B-4DE2-A474-F42160DD9D92}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -130,6 +132,10 @@ Global
 		{00C0C63D-C137-40C6-82E3-74674D6E83FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00C0C63D-C137-40C6-82E3-74674D6E83FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00C0C63D-C137-40C6-82E3-74674D6E83FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD0D96F4-7D9B-4DE2-A474-F42160DD9D92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD0D96F4-7D9B-4DE2-A474-F42160DD9D92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD0D96F4-7D9B-4DE2-A474-F42160DD9D92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD0D96F4-7D9B-4DE2-A474-F42160DD9D92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -153,6 +159,7 @@ Global
 		{22010BDF-7C29-4979-8A8C-E4861F337F89} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 		{7A53DD7F-8E01-4F05-B65F-600058017396} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 		{00C0C63D-C137-40C6-82E3-74674D6E83FB} = {B53A62BA-F808-461D-904B-657C3AD99F28}
+		{BD0D96F4-7D9B-4DE2-A474-F42160DD9D92} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DBEB0F0-6457-4ACB-AE0F-750843B1232C}
