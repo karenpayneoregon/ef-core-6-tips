@@ -9,6 +9,12 @@ namespace TaxpayerEvents
         static void Main(string[] args)
         {
 
+            ExitPrompt();
+            Console.ReadLine();
+        }
+
+        private static void North1()
+        {
             using var context = new OedContext();
 
             var list = context.Taxpayer.Include(tp => tp.Category).ToList();
@@ -24,9 +30,6 @@ namespace TaxpayerEvents
 
             context.Entry(list.FirstOrDefault()).State = EntityState.Deleted;
             context.SaveChanges();
-
-            ExitPrompt();
-            Console.ReadLine();
         }
     }
 }

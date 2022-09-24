@@ -39,7 +39,6 @@ public partial class NorthWindContext : DbContext
         if (!optionsBuilder.IsConfigured)
         {
             ConnectionHelpers.StandardLoggingSqlServer(optionsBuilder);
-            //optionsBuilder.UseSqlServer("Data Source=.\\SQLEXPRESS;Initial Catalog=NorthWind2022;Integrated Security=True");
         }
     }
 
