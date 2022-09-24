@@ -17,20 +17,24 @@ internal partial class Program
         //Setup.CleanDatabase();
         //Setup.Populate();
 
-        //SortCustomerOnCountryName();
-        //SortCustomerOnContactLastName();
-        //SortCustomerOnContactTitle();
+        SortCustomerOnCountryName();
+        SortCustomerOnContactLastName();
+        SortCustomerOnContactTitle();
+        //ConventionalOrderByOnNavigation();
 
+
+        ExitPrompt();
+        Console.ReadLine();
+    }
+
+    private static void ConventionalOrderByOnNavigation()
+    {
         using var context = new NorthWindContext();
         var customers = context.Customers
             .Include(c => c.Contact)
             .Include(c => c.ContactTypeNavigation)
             .OrderBy(c => c.ContactTypeNavigation.ContactTitle)
             .ToList();
-
-
-        ExitPrompt();
-        Console.ReadLine();
     }
 
     private static void SortCustomerOnCountryName()

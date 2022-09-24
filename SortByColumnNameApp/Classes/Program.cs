@@ -56,7 +56,7 @@ internal partial class Program
     private static void ExitPrompt()
     {
         Console.WriteLine();
-        Render(new Rule($"[white on blue]Press a key to exit the demo[/]")
+        Render(new Rule($"[white on blue]Press a key to exit the demo or scroll up to see results[/]")
             .RuleStyle(Style.Parse("cyan"))
             .Centered());
     }
