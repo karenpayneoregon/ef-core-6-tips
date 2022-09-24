@@ -22,7 +22,8 @@ Projects in this solution
 | LoggingOptionsApp | How to use EF Core 6 logging w/o dependency injection |  |
 | ModelCommentsApp | Shows how to get, and set, comments for models in a DbContext |  |
 | ModelCommentsApp1 | Shows how to create comments for each property in a model | Migrations |
-| ParameterizingValuesApp |  |  |
+| TaxpayersConcurrencyCheck | Examples to learn how to work with [concurrency conflicts](https://learn.microsoft.com/en-us/ef/core/saving/concurrency) |  |
+| ParameterizingValuesApp | Understanding how EF Core parameterizes variables |  |
 | TaxpayerEvents | Working with events |  |
 | SortByColumnNameApp | Learn how to perform order by on navigation properties |  |
 | NorthWind2020ConsoleApp | An example of a self-referencing table for managers and workers | Originally .NET Core 5, EF Core 5 and was updated to .NET Core 6, EF Core 6. |
