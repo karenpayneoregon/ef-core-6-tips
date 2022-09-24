@@ -23,6 +23,8 @@ Projects in this solution
 | ModelCommentsApp | Shows how to get, and set, comments for models in a DbContext |  |
 | ModelCommentsApp1 | Shows how to create comments for each property in a model | Migrations |
 | ParameterizingValuesApp |  |  |
+| TaxpayerEvents | Working with events |  |
+| SortByColumnNameApp | Learn how to perform order by on navigation properties |  |
 | NorthWind2020ConsoleApp | An example of a self-referencing table for managers and workers | Originally .NET Core 5, EF Core 5 and was updated to .NET Core 6, EF Core 6. |
 | ValueConversionsEncryptProperty | An example for encrypting string via EF Core HasConversion | Based off a Microsoft sample |
 | NorthWindContactsApp | Example on using EF Core in a Windows Forms project | Based off a Microsoft sample |
