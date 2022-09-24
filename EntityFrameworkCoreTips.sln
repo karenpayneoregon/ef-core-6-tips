@@ -58,6 +58,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthWind2022Library", "Nor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortByColumnNameApp", "SortByColumnNameApp\SortByColumnNameApp.csproj", "{C02F7693-D143-4039-AD2F-85CA64170708}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaxpayerEvents", "TaxpayerEvents\TaxpayerEvents.csproj", "{9DD41CC0-16DC-4086-A9AE-76D342D269E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -148,6 +150,10 @@ Global
 		{C02F7693-D143-4039-AD2F-85CA64170708}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C02F7693-D143-4039-AD2F-85CA64170708}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C02F7693-D143-4039-AD2F-85CA64170708}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DD41CC0-16DC-4086-A9AE-76D342D269E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DD41CC0-16DC-4086-A9AE-76D342D269E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DD41CC0-16DC-4086-A9AE-76D342D269E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DD41CC0-16DC-4086-A9AE-76D342D269E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -174,6 +180,7 @@ Global
 		{BD0D96F4-7D9B-4DE2-A474-F42160DD9D92} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 		{2B6C1745-A6B4-4477-8AAC-B3275FDBC0FD} = {CA35389C-A6AB-4CCA-9C0C-FB3357D708A0}
 		{C02F7693-D143-4039-AD2F-85CA64170708} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
+		{9DD41CC0-16DC-4086-A9AE-76D342D269E3} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DBEB0F0-6457-4ACB-AE0F-750843B1232C}
