@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using Microsoft.EntityFrameworkCore;
 using NorthWind2020ConsoleApp.Data;
 using NorthWind2020ConsoleApp.Models;
 using Spectre.Console;
@@ -54,6 +55,17 @@ public class CoreOperations
 
         AnsiConsole.Write(table);
 
+    }
+
+    public static async Task<List<CustomerItem>> CustomerItems()
+    {
+        await using var context = new Context();
+        return await context.Customers.Select(x => new CustomerItem()
+        {
+            CustomerIdentifier = x.CustomerIdentifier, 
+            CompanyName = x.CompanyName,
+            ContactId = x.ContactId
+        }).ToListAsync();
     }
 
     /// <summary>
