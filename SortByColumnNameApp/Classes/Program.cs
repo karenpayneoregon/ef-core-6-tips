@@ -9,42 +9,9 @@ internal partial class Program
     public static void Init()
     {
         Console.Title = "Code sample: NorthWind sort by string";
-        Console.WindowHeight = 40;
+        Console.WindowHeight = 55;
         Console.WriteLine();
         WindowUtility.SetConsoleWindowPosition(WindowUtility.AnchorWindow.Center);
-    }
-
-    private static Table CreateTableForCountries()
-    {
-        return new Table()
-            .RoundedBorder()
-            .BorderColor(Color.LightSlateGrey)
-            .AddColumn("[b]Customer[/]")
-            .AddColumn("[b]Country[/]")
-            .Title("[cyan]By country[/]")
-            .Alignment(Justify.Center);
-    }
-
-    private static Table CreateTableForContacts()
-    {
-        return new Table()
-            .RoundedBorder()
-            .BorderColor(Color.LightSlateGrey)
-            .AddColumn("[b]Customer[/]")
-            .AddColumn("[b]Contact last name[/]")
-            .Title("[cyan]By last name[/]")
-            .Alignment(Justify.Center);
-    }
-    private static Table CreateTableForContactTitle()
-    {
-        return new Table()
-            .RoundedBorder()
-            .BorderColor(Color.LightSlateGrey)
-            .AddColumn("[b]Customer[/]")
-            .AddColumn("[b]Title[/]")
-            .AddColumn("[b]Contact last name[/]")
-            .Title("[cyan]By title[/]")
-            .Alignment(Justify.Center);
     }
 
     private static void Render(Rule rule)

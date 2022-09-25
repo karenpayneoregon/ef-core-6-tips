@@ -11,85 +11,21 @@ internal partial class Program
 {
     private const int Count = 50;
 
-    static void Main(string[] args)
+    static async Task Main(string[] args)
     {
         // Run these once
         //Setup.CleanDatabase();
         //Setup.Populate();
 
-        SortCustomerOnCountryName();
-        SortCustomerOnContactLastName();
-        SortCustomerOnContactTitle();
-        //ConventionalOrderByOnNavigation();
+        await DataOperations.SortCustomerOnCountryName();
+        await DataOperations.SortCustomerOnContactLastName();
+        await DataOperations.SortCustomerOnContactTitle();
+        DataOperations.ConventionalOrderByOnNavigation();
 
+        var modelNames = GetOperations.GetDatabaseModels();
+        GetOperations.GetProperties(modelNames);
 
         ExitPrompt();
         Console.ReadLine();
-    }
-
-    private static void ConventionalOrderByOnNavigation()
-    {
-        using var context = new NorthWindContext();
-        var customers = context.Customers
-            .Include(c => c.Contact)
-            .Include(c => c.ContactTypeNavigation)
-            .OrderBy(c => c.ContactTypeNavigation.ContactTitle)
-            .ToList();
-    }
-
-    private static void SortCustomerOnCountryName()
-    {
-        using var context = new NorthWindContext();
-        List<Customers> customers = context.Customers
-            .Include(c => c.CountryNavigation)
-            .OrderByEnum(BaseProperty.CountryName, Direction.Ascending)
-            .ToList();
-    
-
-        var table = CreateTableForCountries();
-
-        for (int index = 0; index < Count; index++)
-        {
-            table.AddRow(customers[index].CompanyName, customers[index].CountryNavigation.Name);
-        }
-
-        AnsiConsole.Write(table);
-    }
-
-    private static void SortCustomerOnContactLastName()
-    {
-        using var context = new NorthWindContext();
-        List<Customers> customers = context.Customers
-            .Include(c => c.Contact)
-            .OrderByEnum(BaseProperty.LastName, Direction.Descending)
-            .ToList();
-
-        var table = CreateTableForContacts();
-
-        for (int index = 0; index < Count; index++)
-        {
-            table.AddRow(customers[index].CompanyName, customers[index].Contact.LastName);
-        }
-
-        AnsiConsole.Write(table);
-    }
-
-    private static void SortCustomerOnContactTitle()
-    {
-        using var context = new NorthWindContext();
-        List<Customers> customers = context.Customers
-            .Include(c => c.Contact)
-            .Include(c => c.ContactTypeNavigation)
-            .OrderByEnum(BaseProperty.Title, Direction.Descending)
-            .ToList();
-
-        var table = CreateTableForContactTitle();
-
-        for (int index = 0; index < Count; index++)
-        {
-            table.AddRow(customers[index].CompanyName, customers[index].ContactTypeNavigation.ContactTitle, customers[index].Contact.LastName);
-        }
-
-        AnsiConsole.Write(table);
     }
 }

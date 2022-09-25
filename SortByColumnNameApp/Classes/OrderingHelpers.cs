@@ -18,7 +18,7 @@ public enum Direction
     Descending
 }
 
-public enum BaseProperty
+public enum PropertyAlias
 {
     FirstName,
     LastName,
@@ -49,14 +49,14 @@ public static class OrderingHelpers
         return direction == Direction.Ascending ? query.OrderBy(exp) : query.OrderByDescending(exp);
     }
 
-    public static IQueryable<Customers> OrderByEnum(this IQueryable<Customers> query, BaseProperty key, Direction direction = Direction.Ascending)
+    public static IQueryable<Customers> OrderByEnum(this IQueryable<Customers> query, PropertyAlias key, Direction direction = Direction.Ascending)
     {
         Expression<Func<Customers, object>> exp = key switch
         {
-            BaseProperty.LastName => customer => customer.Contact.LastName,
-            BaseProperty.FirstName => customer => customer.Contact.FirstName,
-            BaseProperty.CountryName => customer => customer.CountryNavigation.Name,
-            BaseProperty.Title => customer => customer.ContactTypeNavigation.ContactTitle,
+            PropertyAlias.LastName => customer => customer.Contact.LastName,
+            PropertyAlias.FirstName => customer => customer.Contact.FirstName,
+            PropertyAlias.CountryName => customer => customer.CountryNavigation.Name,
+            PropertyAlias.Title => customer => customer.ContactTypeNavigation.ContactTitle,
             _ => customer => customer.CompanyName
         };
 
@@ -88,7 +88,8 @@ public static class OrderingHelpers
 
         ParameterExpression param = Expression.Parameter(typeof(T), "item");
 
-        Expression<Func<T, object>> sortExpression = Expression.Lambda<Func<T, object>>(Expression.Convert(Expression.Property(param, propertyName), typeof(object)), param);
+        Expression<Func<T, object>> sortExpression = 
+            Expression.Lambda<Func<T, object>>(Expression.Convert(Expression.Property(param, propertyName), typeof(object)), param);
 
         list = sortDirection switch
         {
