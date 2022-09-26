@@ -1,4 +1,4 @@
-﻿# Tip: How to order by a Navigation property dynamically
+﻿# EF Core: How to order by a Navigation property dynamically
 
 In this article, learn how to perform order by using Entity Framework Core where order by are dynamic on navigation properties.
 
@@ -213,7 +213,7 @@ public class SqlColumn
 - SortCustomerOnCountryName, sort on included table for countries
 - SortCustomerOnContactLastName, sort on included table for contacts
 
-Helper methods
+# Helper methods
 
 | Method        |   Description    |
 |:------------- |:-------------|
@@ -223,6 +223,10 @@ Helper methods
 | [OrderByEnum](https://github.com/karenpayneoregon/ef-core-6-tips/blob/master/SortByColumnNameApp/Classes/OrderingHelpers.cs#L60) | Order a navigation propery using an enum for the property to order by
 | [OrderByPropertyName](https://github.com/karenpayneoregon/ef-core-6-tips/blob/master/SortByColumnNameApp/Classes/OrderingHelpers.cs#L103) | Order top level property by string
 
+
+## See also
+
+[How to display an enum in WinForms ComboBox or ASP.NET Core Select](https://github.com/karenpayneoregon/display-enum-asp-winforms)
 
 
 # Summary
