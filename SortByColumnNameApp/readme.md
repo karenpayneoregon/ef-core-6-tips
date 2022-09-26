@@ -213,6 +213,17 @@ public class SqlColumn
 - SortCustomerOnCountryName, sort on included table for countries
 - SortCustomerOnContactLastName, sort on included table for contacts
 
+Helper methods
+
+| Method        |   Description    |
+|:------------- |:-------------|
+| [GetDatabaseModels](https://github.com/karenpayneoregon/ef-core-6-tips/blob/master/SortByColumnNameApp/Classes/GetOperations.cs#L13) | Get model names for a DbContext
+| [GetProperties](https://github.com/karenpayneoregon/ef-core-6-tips/blob/master/SortByColumnNameApp/Classes/GetOperations.cs#L20) | Get properties for a model
+| [OrderByString](https://github.com/karenpayneoregon/ef-core-6-tips/blob/master/SortByColumnNameApp/Classes/OrderingHelpers.cs#L38) | Order a navigation property using a string for the property to order by
+| [OrderByEnum](https://github.com/karenpayneoregon/ef-core-6-tips/blob/master/SortByColumnNameApp/Classes/OrderingHelpers.cs#L60) | Order a navigation propery using an enum for the property to order by
+| [OrderByPropertyName](https://github.com/karenpayneoregon/ef-core-6-tips/blob/master/SortByColumnNameApp/Classes/OrderingHelpers.cs#L103) | Order top level property by string
+
+
 
 # Summary
 
