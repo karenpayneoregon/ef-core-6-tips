@@ -14,7 +14,7 @@ namespace SortByColumnNameApp.Classes
         {
             using var context = new NorthWindContext();
 
-            return context.GetModelNames().Select(x => x.Name).ToList();
+            return context.GetModelNames().Select(type => type.Name).ToList();
         }
 
         public static void GetProperties(List<string> modelNames)
@@ -29,10 +29,27 @@ namespace SortByColumnNameApp.Classes
 
                 foreach (var property in properties)
                 {
-                    table.AddRow(property.Name, property.IsPrimaryKey.ToYesNo());
+                    table.AddRow(
+                        property.Name, 
+                        property.IsPrimaryKey.ToYesNo());
                 }
 
                 AnsiConsole.Write(table);
+            }
+        }
+
+        public static void NavigationDetails()
+        {
+            using var context = new NorthWindContext();
+            var details = context.GetNavigationDetails();
+
+            foreach (var detail in details)
+            {
+                Console.WriteLine(detail.Name);
+                foreach (var info in detail.NavigationProperties)
+                {
+                    Console.WriteLine($"   {info.Name}");
+                }
             }
         }
 

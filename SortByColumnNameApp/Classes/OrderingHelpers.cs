@@ -49,6 +49,14 @@ public static class OrderingHelpers
         return direction == Direction.Ascending ? query.OrderBy(exp) : query.OrderByDescending(exp);
     }
 
+    /// <summary>
+    /// Provides sorting by <see cref="PropertyAlias"/> using a key specified in <see cref="key"/> and if the key is not found the default is <see cref="Customers.CompanyName"/>
+    /// <para>By default the sort order is <see cref="Direction.Ascending"/></para> 
+    /// </summary>
+    /// <param name="query"><see cref="Customers"/> query</param>
+    /// <param name="key">key to sort by</param>
+    /// <param name="direction">direction to sort by</param>
+    /// <returns>query with order by</returns>
     public static IQueryable<Customers> OrderByEnum(this IQueryable<Customers> query, PropertyAlias key, Direction direction = Direction.Ascending)
     {
         Expression<Func<Customers, object>> exp = key switch
@@ -64,7 +72,8 @@ public static class OrderingHelpers
     }
 
     /// <summary>
-    /// Provides sorting by string using a key specified in <see cref="key"/> and if the key is not found the default is <see cref="Contacts.LastName"/>
+    /// Provides sorting by string using a key specified in <see cref="key"/> and if the key is not found the default is <see cref="Contacts.LastName"/>. 
+    /// <para>By default the sort order is <see cref="Direction.Ascending"/></para> 
     /// </summary>
     /// <param name="query"><see cref="Contacts"/> query</param>
     /// <param name="key">key to sort by</param>
@@ -83,6 +92,14 @@ public static class OrderingHelpers
         return direction == Direction.Ascending ? query.OrderBy(exp) : query.OrderByDescending(exp);
     }
 
+    /// <summary>
+    /// Generic top level order by property name
+    /// </summary>
+    /// <typeparam name="T">Model</typeparam>
+    /// <param name="list">List of <see cref="T"/></param>
+    /// <param name="propertyName">Column/property to order or</param>
+    /// <param name="sortDirection">Direction of ordering</param>
+    /// <returns></returns>
     public static List<T> OrderByPropertyName<T>(this List<T> list, string propertyName, Direction sortDirection)
     {
 

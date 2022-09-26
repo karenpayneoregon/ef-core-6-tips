@@ -24,6 +24,7 @@ internal partial class Program
 
         var modelNames = GetOperations.GetDatabaseModels();
         GetOperations.GetProperties(modelNames);
+        GetOperations.NavigationDetails();
 
         ExitPrompt();
         Console.ReadLine();

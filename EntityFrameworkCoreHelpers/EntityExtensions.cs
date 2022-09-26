@@ -49,7 +49,8 @@ public static class EntityExtensions
     }
 
     private static Type GetEntityType(DbContext context, string modelName) =>
-        context.Model.GetEntityTypes().Select(eType => eType.ClrType)
+        context.Model.GetEntityTypes()
+            .Select(eType => eType.ClrType)
             .FirstOrDefault(type => type.Name == modelName);
 
 
@@ -158,5 +159,16 @@ public static class EntityExtensions
         return commentList;
 
     }
+
+    /// <summary>
+    /// Get Model navigations
+    /// </summary>
+    public static List<Details> GetNavigationDetails(this DbContext context) =>
+        context.Model.GetEntityTypes()
+            .Select(entityType => new Details(
+                entityType.ClrType.Name,
+                entityType.GetNavigations()
+                    .Select(navigation => navigation.PropertyInfo)))
+            .ToList();
 
 }

@@ -110,7 +110,10 @@ namespace SortByColumnNameApp.Classes
 
             for (int index = 0; index < Count; index++)
             {
-                table.AddRow(customers[index].CompanyName, customers[index].ContactTypeNavigation.ContactTitle, customers[index].Contact.LastName);
+                table.AddRow(
+                    customers[index].CompanyName, 
+                    customers[index].ContactTypeNavigation.ContactTitle, 
+                    customers[index].Contact.LastName);
             }
 
             AnsiConsole.Write(table);
