@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GetStartedWinForms.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace GetStartedWinForms;
+namespace GetStartedWinForms.Data;
 
 public class ProductsContext : DbContext
 {

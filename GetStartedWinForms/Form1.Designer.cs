@@ -1,4 +1,6 @@
-﻿namespace GetStartedWinForms
+﻿using GetStartedWinForms.Models;
+
+namespace GetStartedWinForms
 {
     partial class MainForm
     {
@@ -74,7 +76,7 @@
             // 
             // categoryBindingSource
             // 
-            this.categoryBindingSource.DataSource = typeof(GetStartedWinForms.Category);
+            this.categoryBindingSource.DataSource = typeof(Category);
             // 
             // dataGridViewProducts
             // 
