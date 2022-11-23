@@ -2,16 +2,19 @@
 
 	<PropertyGroup>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net6.0</TargetFramework>
+		<TargetFramework>net7.0</TargetFramework>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>disable</Nullable>
+		<Nullable>enable</Nullable>
+		<ApplicationIcon>assets\csharp.ico</ApplicationIcon>
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="assets\csharp.ico" />
 	  <None Remove="readme.md" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Content Include="assets\csharp.ico" />
 	  <Content Include="readme.md" />
 	</ItemGroup>
 
@@ -22,7 +25,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Folder Include="assets\" />
 	  <Folder Include="Scripts\" />
 	</ItemGroup>
 

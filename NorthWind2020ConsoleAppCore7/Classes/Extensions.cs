@@ -1,4 +1,4 @@
-﻿namespace NorthWind2020ConsoleApp.Classes;
+﻿namespace NorthWind2020ConsoleAppCore7.Classes;
 
 public static class EnumerableExtensions
 {
