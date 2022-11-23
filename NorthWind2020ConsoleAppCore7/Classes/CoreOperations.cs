@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using BenchmarkDotNet.Attributes;
 using Microsoft.EntityFrameworkCore;
 using NorthWind2020ConsoleApp.Models;
 using NorthWind2020ConsoleAppCore7.Data;
@@ -6,9 +7,27 @@ using NorthWind2020ConsoleAppCore7.Models;
 
 namespace NorthWind2020ConsoleAppCore7.Classes;
 
+[ShortRunJob]
+[JsonExporterAttribute.Full, HtmlExporter, MarkdownExporterAttribute.GitHub]
 public class CoreOperations
 {
 
+    [SuppressMessage("ReSharper", "All")]
+    [Benchmark]
+
+    public void EmployeeReportsTo()
+    {
+        using var context = new Context();
+
+        var employees = context.Employees.AsEnumerable();
+
+        List<IGrouping<int?, Employees>> groupedData = employees
+            .Where(employee => employee.ReportsTo.HasValue)
+            .OrderBy(employee => employee.LastName)
+            .GroupBy(employee => employee.ReportsTo)
+            .ToList();
+
+    }
     /// <summary>
     /// Example for self-referencing table where the property <see cref="Employees.ReportsTo"/> is null
     /// this indicates the <see cref="Employees"/> is a manager.
@@ -16,7 +35,7 @@ public class CoreOperations
     /// <see cref="Employees.WorkersNavigation"/> for a manager will contain their employees.
     /// </summary>
     [SuppressMessage("ReSharper", "All")]
-    public static void EmployeeReportsTo()
+    public static void EmployeeReportsTo_1()
     {
         using var context = new Context();
 

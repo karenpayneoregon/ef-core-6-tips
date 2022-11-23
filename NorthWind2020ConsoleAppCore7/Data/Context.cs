@@ -45,8 +45,8 @@ public partial class Context : DbContext
     {
         if (!optionsBuilder.IsConfigured)
         {
-            // https://www.nuget.org/packages/ConfigurationLibrary/
-            optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString());
+            optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString())
+                .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
     }
 

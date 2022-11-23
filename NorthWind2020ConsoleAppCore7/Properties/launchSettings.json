@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "NorthWind2020ConsoleAppCore7": {
+      "commandName": "Project",
+      "commandLineArgs": "--filter *CoreOperations*"
+    }
+  }
+}

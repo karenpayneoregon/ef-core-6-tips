@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using BenchmarkDotNet.Attributes;
+using BenchmarkDotNet.Exporters.Csv;
 using Microsoft.EntityFrameworkCore;
 using NorthWind2020ConsoleApp.Data;
 using NorthWind2020ConsoleApp.Models;
@@ -6,6 +8,8 @@ using Spectre.Console;
 
 namespace NorthWind2020ConsoleApp.Classes;
 
+[ShortRunJob]
+[JsonExporterAttribute.Full, CsvMeasurementsExporter, CsvExporter(CsvSeparator.Comma), HtmlExporter, MarkdownExporterAttribute.GitHub]
 public class CoreOperations
 {
 
@@ -16,7 +20,22 @@ public class CoreOperations
     /// <see cref="Employees.WorkersNavigation"/> for a manager will contain their employees.
     /// </summary>
     [SuppressMessage("ReSharper", "All")]
-    public static void EmployeeReportsTo()
+    [Benchmark]
+    public  void EmployeeReportsTo()
+    {
+        using var context = new Context();
+
+        var employees = context.Employees.AsEnumerable();
+
+        List<IGrouping<int?, Employees>> groupedData = employees
+            .Where(employee => employee.ReportsTo.HasValue)
+            .OrderBy(employee => employee.LastName)
+            .GroupBy(employee => employee.ReportsTo)
+            .ToList();
+
+    }
+    [SuppressMessage("ReSharper", "All")]
+    public static void EmployeeReportsTo_1()
     {
         using var context = new Context();
 
@@ -39,7 +58,7 @@ public class CoreOperations
             Employees current = employees.Find(employee => employee.EmployeeId == group.Key!.Value)!;
             table.AddRow(current!.FullName);
 
-            Manager manager = new() {Employee = current };
+            Manager manager = new() { Employee = current };
 
             foreach (var groupedItem in group)
             {
@@ -53,9 +72,10 @@ public class CoreOperations
 
         managers = managers.OrderBy(x => x.Employee.LastName).ToList();
 
-        AnsiConsole.Write(table);
+        //AnsiConsole.Write(table);
 
     }
+
 
     public static async Task<List<CustomerItem>> CustomerItems()
     {
