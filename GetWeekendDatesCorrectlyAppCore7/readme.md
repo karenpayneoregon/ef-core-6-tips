@@ -74,6 +74,11 @@ var groupWeekend = context.Orders
 Before search the web for assistance, read if available recommendations in error messages which either give you the path to take to resove the issue or allows a developer to ask a well formed question in online forums like Stackoverflow.
 
 
+# See also
+
+- Microsoft: [Client vs. Server Evaluation](https://learn.microsoft.com/en-us/ef/core/querying/client-eval)
+
+
 **Figure 1**
 
 ![Incorrect](assets/incorrect.png)
@@ -82,3 +87,4 @@ Before search the web for assistance, read if available recommendations in error
 Code sample screenshot
 
 ![Screen](assets/screen.png)
+

@@ -1,4 +1,4 @@
-﻿namespace GetWeekendDatesCorrectlyApp.Classes;
+﻿namespace GetWeekendDatesCorrectlyAppCore7.Classes;
 
 internal static class DateTimeExtensions
 {

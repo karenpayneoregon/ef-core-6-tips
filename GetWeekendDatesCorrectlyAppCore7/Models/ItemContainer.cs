@@ -1,4 +1,4 @@
-﻿namespace GetWeekendDatesCorrectlyApp.Models;
+﻿namespace GetWeekendDatesCorrectlyAppCore7.Models;
 
 public class ItemContainer
 {

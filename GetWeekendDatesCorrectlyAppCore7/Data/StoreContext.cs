@@ -1,8 +1,9 @@
-﻿using GetWeekendDatesCorrectlyApp.Models;
+﻿using GetWeekendDatesCorrectlyAppCore7.Models;
 using Microsoft.EntityFrameworkCore;
+
 #pragma warning disable CS8618
 
-namespace GetWeekendDatesCorrectlyApp.Data;
+namespace GetWeekendDatesCorrectlyAppCore7.Data;
 
 public class StoreContext : DbContext
 {

@@ -1,5 +1,5 @@
 ﻿
-namespace GetWeekendDatesCorrectlyApp.Models;
+namespace GetWeekendDatesCorrectlyAppCore7.Models;
 
 public class Order
 {

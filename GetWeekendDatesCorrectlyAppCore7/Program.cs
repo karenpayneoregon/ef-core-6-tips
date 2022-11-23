@@ -1,6 +1,8 @@
-﻿using GetWeekendDatesCorrectlyApp.Models;
+﻿using GetWeekendDatesCorrectlyAppCore7.Classes;
+using GetWeekendDatesCorrectlyAppCore7.Data;
+using GetWeekendDatesCorrectlyAppCore7.Models;
 
-namespace GetWeekendDatesCorrectlyApp
+namespace GetWeekendDatesCorrectlyAppCore7
 {
     internal partial class Program
     {
@@ -12,7 +14,7 @@ namespace GetWeekendDatesCorrectlyApp
 
             var saturdayOrSundayDelivered = context.Orders.AsEnumerable().Where(o => o.DeliveredDate.IsWeekend()).ToList();
             
-            var weekEndTable = CreateOrderTable("Weekend");
+            var weekEndTable = GetWeekendDatesCorrectlyApp.Program.CreateOrderTable("Weekend");
             foreach (var order in saturdayOrSundayDelivered)
             {
                 weekEndTable.AddRow(order.Id.ToString(), order.OrderDate.ToShortDateString(), order.DeliveredDate.ToString("yyyy-M-d dddd"));
@@ -21,7 +23,7 @@ namespace GetWeekendDatesCorrectlyApp
             AnsiConsole.Write(weekEndTable);
             Console.WriteLine();
 
-            var weekDayTable = CreateOrderTable("Weekday");
+            var weekDayTable = GetWeekendDatesCorrectlyApp.Program.CreateOrderTable("Weekday");
             var weekdayDeliveries = context.Orders.AsEnumerable().Where(o => !o.DeliveredDate.IsWeekend()).ToList();
             foreach (var order in weekdayDeliveries)
             {
@@ -51,7 +53,7 @@ namespace GetWeekendDatesCorrectlyApp
                 .OrderBy(x => x.DayOfWeek)
                 .ToList();
 
-            var groupedTable = CreateGroupTable();
+            var groupedTable = GetWeekendDatesCorrectlyApp.Program.CreateGroupTable();
             foreach (var grouped in groupWeekend2)
             {
                 groupedTable.AddRow(grouped.DayOfWeek.ToString());

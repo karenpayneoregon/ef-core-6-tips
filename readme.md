@@ -8,6 +8,10 @@ Also, there are several code samples taken from Microsoft and are marked so in t
 
 Hopefully what is provided will assist all levels of developers.
 
+## EF Core 7
+
+Since November 2022 EF Core 7 has been released this will be the main version used.
+
 # Projects
 
 Projects in this solution
@@ -29,6 +33,8 @@ Projects in this solution
 | NorthWind2020ConsoleApp | An example of a self-referencing table for managers and workers | Originally .NET Core 5, EF Core 5 and was updated to .NET Core 6, EF Core 6. |
 | ValueConversionsEncryptProperty | An example for encrypting string via EF Core HasConversion | Based off a Microsoft sample |
 | NorthWindContactsApp | Example on using EF Core in a Windows Forms project | Based off a Microsoft sample |
+| GetWeekendDatesCorrectlyApp | Client side evaluation working with dates EF Core 7 |  |
+|  |  |  |
 |  |  |  |
 
 # Requires
