@@ -46,6 +46,10 @@ Projects in this solution
 
 See the following [page](ReverseEngineer.md) to learn how to reverse engineer a new SQL-Server database using EF Power Tools, step by step.
 
+# EF CORE 7
+
+See the following [respoitory](https://github.com/karenpayneoregon/csharp-11-ef-core-7-features) which I just started 11/2022
+
 # Resources
 
 - Entity Framework Core docs [![](assets/Link_16x.png)](https://docs.microsoft.com/en-us/ef/core/)
