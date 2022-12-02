@@ -34,7 +34,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <ProjectReference Include="..\EntityFrameworkCoreHelpers\EntityFrameworkCoreHelpers.csproj" />
+	  <!--<ProjectReference Include="..\EntityFrameworkCoreHelpers\EntityFrameworkCoreHelpers.csproj" />-->
 	  <!--<ProjectReference Include="..\NorthWind2022Library\NorthWind2022Library.csproj" />-->
 	</ItemGroup>
 

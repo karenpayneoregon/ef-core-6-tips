@@ -1,4 +1,5 @@
-﻿using EntityFrameworkCoreHelpers;
+﻿using System.Diagnostics;
+using ConfigurationLibrary.Classes;
 using Microsoft.EntityFrameworkCore;
 using SortByColumnNameApp.Models;
 
@@ -20,14 +21,11 @@ public partial class NorthWindContext : DbContext
     public virtual DbSet<Contacts> Contacts { get; set; }
     public virtual DbSet<Countries> Countries { get; set; }
     public virtual DbSet<Customers> Customers { get; set; }
-    
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        if (!optionsBuilder.IsConfigured)
-        {
-            ConnectionHelpers.StandardLoggingSqlServer(optionsBuilder);
-        }
-    }
+        => optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString())
+            .EnableSensitiveDataLogging()
+            .LogTo(message => Debug.WriteLine(message));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

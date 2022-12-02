@@ -9,6 +9,7 @@ using ConfigurationLibrary.Classes;
 using Microsoft.EntityFrameworkCore;
 using NorthWind2020ConsoleApp.Data.Configurations;
 using NorthWind2020ConsoleApp.Models;
+using NorthWind2020ConsoleAppCore7.Compiled;
 
 namespace NorthWind2020ConsoleAppCore7.Data;
 
@@ -43,9 +44,13 @@ public partial class Context : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
+
         if (!optionsBuilder.IsConfigured)
         {
-            optionsBuilder.UseSqlServer(ConfigurationHelper.ConnectionString())
+            optionsBuilder
+                .UseModel(ContextModel.Instance)
+                .UseSqlServer(ConfigurationHelper.ConnectionString())
+                .EnableServiceProviderCaching()
                 .UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
     }

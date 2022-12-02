@@ -14,7 +14,6 @@ public class CoreOperations
 
     [SuppressMessage("ReSharper", "All")]
     [Benchmark]
-
     public void EmployeeReportsTo()
     {
         using var context = new Context();
@@ -76,10 +75,11 @@ public class CoreOperations
 
     }
 
-    public static async Task<List<CustomerItem>> CustomerItems()
+    [Benchmark]
+    public async Task<List<CustomerItem>> CustomerItems()
     {
         await using var context = new Context();
-        return await context.Customers.AsNoTracking().Select(x => new CustomerItem()
+        return await context.Customers.Select(x => new CustomerItem()
         {
             CustomerIdentifier = x.CustomerIdentifier, 
             CompanyName = x.CompanyName,

@@ -1,7 +1,4 @@
-﻿using EntityFrameworkCoreHelpers;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using ParameterizingValuesApp.Classes;
 using ParameterizingValuesApp.Data;
 using ParameterizingValuesApp.Models;
