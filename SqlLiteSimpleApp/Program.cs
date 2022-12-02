@@ -13,7 +13,8 @@ internal partial class Program
 
             BuildData(context);
             ShowData(context);
-            UpdateOneRecord(context);
+            UpdateOneRecord1(context);
+            UpdateOneRecord2(context);
             ShowData(context);
         }
 
@@ -39,11 +40,18 @@ internal partial class Program
     /// <summary>
     /// Update a record
     /// </summary>
-    private static void UpdateOneRecord(Context context)
+    private static void UpdateOneRecord1(Context context)
     {
         var item = context.FileContainers.FirstOrDefault(x => x.Id == 2);
         Console.WriteLine();
         item!.Path1 = Prompts.GetPath();
+        context.SaveChanges();
+    }
+    private static void UpdateOneRecord2(Context context)
+    {
+        var item = context.FileContainers.FirstOrDefault(x => x.Path3 == "C3");
+        Console.WriteLine();
+        item!.Path3 = "New path";
         context.SaveChanges();
     }
 
