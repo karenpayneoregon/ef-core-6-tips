@@ -56,5 +56,6 @@ private static void BuildData(Context context)
 ```
 
 
+![Diagraph](assets/diagraph.png)
 
 ![F1](assets/F1.png)
