@@ -1,8 +1,4 @@
-﻿using System.Text.Json;
-using Microsoft.EntityFrameworkCore;
-using SortByColumnNameApp.Classes;
-using SortByColumnNameApp.Data;
-using SortByColumnNameApp.Models;
+﻿using SortByColumnNameApp.Classes;
 
 
 namespace SortByColumnNameApp;

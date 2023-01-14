@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.Json;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 using SortByColumnNameApp.Models;
 using SortByColumnNameApp.Data;
 
@@ -33,7 +28,7 @@ namespace SortByColumnNameApp.Classes
                 context.Countries.Add(new Countries() { Name = country.Name });
             }
 
-            List<string> contactTypes = new List<string>
+            List<string> contactTypes = new()
             {
                 "Accounting Manager",
                 "Assistant Sales Agent",
