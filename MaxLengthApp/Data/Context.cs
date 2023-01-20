@@ -31,9 +31,15 @@ public partial class Context : DbContext
     {
         modelBuilder.Entity<Customer>(entity =>
         {
-            entity.HasOne(d => d.ContactTypeIdentifierNavigation).WithMany(p => p.Customer).HasConstraintName("FK_Customer_ContactTypes");
+            entity.HasOne(d => 
+                d.ContactTypeIdentifierNavigation)
+                .WithMany(p => p.Customer)
+                .HasConstraintName("FK_Customer_ContactTypes");
 
-            entity.HasOne(d => d.GenderIdentifierNavigation).WithMany(p => p.Customer).HasConstraintName("FK_Customer_Genders");
+            entity.HasOne(d => 
+                d.GenderIdentifierNavigation)
+                .WithMany(p => p.Customer)
+                .HasConstraintName("FK_Customer_Genders");
         });
 
         OnModelCreatingPartial(modelBuilder);
