@@ -1,33 +1,12 @@
-﻿using System.Diagnostics;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 
-using System.Reflection;
-using EntityFrameworkCoreHelpers.Models;
-
-namespace EntityFrameworkCoreHelpers;
+namespace MaxLengthApp.Classes;
 
 public static class EntityExtensions
 {
-    /// <summary>
-    /// Test connection with exception handling
-    /// </summary>
-    /// <param name="context">active DbContext</param>
-    /// <returns></returns>
-    [DebuggerStepThrough]
-    public static async Task<(bool success, Exception exception)> CanConnectAsync(this DbContext context)
-    {
-        try
-        {
-            var result = await Task.Run(async () => await context.Database.CanConnectAsync());
-            return (result, null);
-        }
-        catch (Exception e)
-        {
-            return (false, e);
-        }
-    }
+
 
     /// <summary>
     /// Get each type of model in a <see cref="DbContext"/>
@@ -78,16 +57,20 @@ public static class EntityExtensions
 
         foreach (IProperty itemProperty in properties)
         {
-            SqlColumn sqlColumn = new SqlColumn
+
+            SqlColumn sqlColumn = new()
             {
                 Name = itemProperty.Name,
                 IsPrimaryKey = itemProperty.IsKey(),
                 IsForeignKey = itemProperty.IsForeignKey(),
-                IsNullable = itemProperty.IsColumnNullable()
+                IsNullable = itemProperty.IsColumnNullable(),
+                ClrType = itemProperty.ClrType,
+                MaxLength = itemProperty.GetMaxLength() is null ? 0 : itemProperty.GetMaxLength()
             };
 
 
             list.Add(sqlColumn);
+  
 
         }
 

@@ -15,13 +15,13 @@ namespace SortByColumnNameApp.Classes
 
         public static void Populate()
         {
-            var CountriesFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Json", "Countries.json");
+            var countriesFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Json", "Countries.json");
             var contactFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Json", "Contacts.json");
             var customersFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Json", "Customers.json");
 
             using var context = new Data.NorthWindContext();
             List<Countries> countries =
-                JsonSerializer.Deserialize<List<Countries>>(File.ReadAllText(CountriesFile));
+                JsonSerializer.Deserialize<List<Countries>>(File.ReadAllText(countriesFile));
 
             foreach (var country in countries)
             {
