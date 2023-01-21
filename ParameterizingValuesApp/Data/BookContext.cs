@@ -1,10 +1,9 @@
 ﻿using System.Diagnostics;
-using EntityFrameworkCoreHelpers;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Logging;
+using ParameterizingValuesApp.Classes;
 using ParameterizingValuesApp.Models;
-
+using Serilog;
 using static ConfigurationLibrary.Classes.ConfigurationHelper;
 
 namespace ParameterizingValuesApp.Data;
@@ -16,7 +15,7 @@ public class BookContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        DatabaseCategoryLogging(optionsBuilder);
+        SeriLogging(optionsBuilder);
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -73,11 +72,22 @@ public class BookContext : DbContext
     /// </summary>
     private static void CustomLogging(DbContextOptionsBuilder optionsBuilder)
     {
-
+        
         optionsBuilder
             .UseSqlServer(ConnectionString())
             .EnableSensitiveDataLogging()
             .LogTo(new DbContextToFileLogger().Log)
+            .EnableDetailedErrors();
+
+    }
+
+    private static void SeriLogging(DbContextOptionsBuilder optionsBuilder)
+    {
+
+        optionsBuilder
+            .UseSqlServer(ConnectionString())
+            .EnableSensitiveDataLogging()
+            .LogTo(Log.Logger.Information, LogLevel.Information, null)
             .EnableDetailedErrors();
 
     }

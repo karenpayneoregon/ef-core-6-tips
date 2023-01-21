@@ -1,10 +1,5 @@
-﻿using EntityFrameworkCoreHelpers;
+﻿
 using ParameterizingValuesApp.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ParameterizingValuesApp.Models;
 
 namespace ParameterizingValuesApp.Classes;
@@ -50,7 +45,7 @@ internal class SetupDatabase
             context.Categories.Add(new Category() {  Description = "Comedy"  });
             context.Categories.Add(new Category() {  Description = "Fiction" });
             context.Categories.Add(new Category() {  Description = "Learn C#"});
-            context.Categories.Add(new Category() {  Description = "EF Core 6"});
+            context.Categories.Add(new Category() {  Description = "EF Core 7"});
 
             await context.SaveChangesAsync();
 

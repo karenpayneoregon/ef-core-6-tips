@@ -24,7 +24,7 @@ internal partial class Program
                 AnsiConsole.MarkupLine($"[white on blue]{model.Name}[/]");
                 foreach (var column in columns)
                 {
-                    AnsiConsole.MarkupLine($"\t[cyan]{column.Name}[/] {column.ClrType.Name} | {column.MaxLength}");
+                    AnsiConsole.MarkupLine($"\t[cyan]{column.Name}[/] [yellow]{column.ClrType.Name}[/] [white]=>[/] [cyan]{column.MaxLength}[/]");
                 }
             }
         }
