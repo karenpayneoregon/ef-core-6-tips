@@ -18,7 +18,7 @@ public enum Direction
     Descending
 }
 
-public enum BaseProperty
+public enum ColumnProperty
 {
     FirstName,
     LastName,
@@ -49,13 +49,13 @@ public static class OrderingHelpers
         return direction == Direction.Ascending ? query.OrderBy(exp) : query.OrderByDescending(exp);
     }
 
-    public static IQueryable<Customers> OrderByEnum(this IQueryable<Customers> query, BaseProperty key, Direction direction = Direction.Ascending)
+    public static IQueryable<Customers> OrderByEnum(this IQueryable<Customers> query, ColumnProperty key, Direction direction = Direction.Ascending)
     {
         Expression<Func<Customers, object>> exp = key switch
         {
-            BaseProperty.LastName => customer => customer.Contact.LastName,
-            BaseProperty.FirstName => customer => customer.Contact.FirstName,
-            BaseProperty.CountryName => customer => customer.CountryNavigation.Name,
+            ColumnProperty.LastName => customer => customer.Contact.LastName,
+            ColumnProperty.FirstName => customer => customer.Contact.FirstName,
+            ColumnProperty.CountryName => customer => customer.CountryNavigation.Name,
             _ => customer => customer.CompanyName
         };
 

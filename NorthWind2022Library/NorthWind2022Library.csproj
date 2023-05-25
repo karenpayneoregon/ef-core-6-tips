@@ -9,7 +9,7 @@
 		<PackageReference Include="ConfigurationLibrary" Version="1.0.1" />
 	</ItemGroup>
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
 	</ItemGroup>
 	<ItemGroup>
 	  <ProjectReference Include="..\EntityFrameworkCoreHelpers\EntityFrameworkCoreHelpers.csproj" />

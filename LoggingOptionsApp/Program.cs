@@ -1,6 +1,4 @@
-﻿using EntityFrameworkCoreHelpers.Models;
-using ExtensionsLibrary;
-using LoggingOptionsApp.Classes;
+﻿using LoggingOptionsApp.Classes;
 using LoggingOptionsApp.Data;
 
 namespace LoggingOptionsApp
@@ -10,7 +8,7 @@ namespace LoggingOptionsApp
         static async Task Main(string[] args)
         {
 
-            //await SetupDatabase.CreateDatabase();
+            await SetupDatabase.CreateDatabase();
 
             await using var context = new BookContext();
 

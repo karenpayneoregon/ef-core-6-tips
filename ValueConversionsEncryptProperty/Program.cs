@@ -1,4 +1,5 @@
-﻿using ValueConversionsEncryptProperty.Classes;
+﻿using SecurityDriven.Inferno.Extensions;
+using ValueConversionsEncryptProperty.Classes;
 using ValueConversionsEncryptProperty.Data;
 using ValueConversionsEncryptProperty.Models;
 
@@ -8,6 +9,14 @@ namespace ValueConversionsEncryptProperty
     {
         static async Task Main(string[] args)
         {
+            var users = BogusOperations.MockedUsers(3);
+            AnsiConsole.MarkupLine("[cyan]Bogus/original data[/]");
+            users.ForEach(current =>
+            {
+                Console.WriteLine($"{current.Name,-12}{current.Password}");
+            });
+
+            Console.WriteLine();
 
             await using (var context = new SampleDbContext())
             {
@@ -17,18 +26,23 @@ namespace ValueConversionsEncryptProperty
 
                 AnsiConsole.MarkupLine("[cyan]Save a new entity...[/]");
 
-                context.Add(new User { Name = "Karen", Password = "password" });
+                context.AddRange(users);
                 await context.SaveChangesAsync();
+
             }
+
+            Console.WriteLine();
 
             await using (var context = new SampleDbContext())
             {
                 AnsiConsole.MarkupLine("[cyan]Read the entity back[/]");
 
-                var user = context.Set<User>().Single();
-
-                AnsiConsole.MarkupLine($"User [cyan]{user.Name}[/] has password [cyan]'{user.Password}'[/]");
+                context.User.ToList().ForEach(current =>
+                {
+                    Console.WriteLine($"{current.Name,-12}{current.Password}");
+                });
             }
+
 
             Console.ReadLine();
         }

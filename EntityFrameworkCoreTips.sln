@@ -5,6 +5,7 @@ VisualStudioVersion = 17.3.32825.248
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{951BCD53-09E1-4548-9E24-BF658E76E2F6}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		Scripts\NorthContactst.sql = Scripts\NorthContactst.sql
 		readme.md = readme.md
 		ReverseEngineer.md = ReverseEngineer.md
@@ -68,7 +69,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sqlite", "Sqlite", "{B6C0E9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlLiteSimpleApp", "SqlLiteSimpleApp\SqlLiteSimpleApp.csproj", "{283964D3-680D-4A2B-9C7D-2BB23ED83600}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxLengthApp", "MaxLengthApp\MaxLengthApp.csproj", "{1317B23D-16EE-4FBA-B436-AC8B007937ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaxLengthApp", "MaxLengthApp\MaxLengthApp.csproj", "{1317B23D-16EE-4FBA-B436-AC8B007937ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF_IdentityOptions", "EF_IdentityOptions\EF_IdentityOptions.csproj", "{D4FC6473-51D0-4163-9B6E-5528BB2ECF93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tinkering", "Tinkering", "{3FAE0908-B28C-45AE-83BE-0A91269F971D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Experiment1", "Experiment1\Experiment1.csproj", "{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -180,6 +187,14 @@ Global
 		{1317B23D-16EE-4FBA-B436-AC8B007937ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1317B23D-16EE-4FBA-B436-AC8B007937ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1317B23D-16EE-4FBA-B436-AC8B007937ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4FC6473-51D0-4163-9B6E-5528BB2ECF93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4FC6473-51D0-4163-9B6E-5528BB2ECF93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4FC6473-51D0-4163-9B6E-5528BB2ECF93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4FC6473-51D0-4163-9B6E-5528BB2ECF93}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -212,6 +227,9 @@ Global
 		{B6C0E962-8124-43A7-B656-56B3D8435EA9} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 		{283964D3-680D-4A2B-9C7D-2BB23ED83600} = {B6C0E962-8124-43A7-B656-56B3D8435EA9}
 		{1317B23D-16EE-4FBA-B436-AC8B007937ED} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
+		{D4FC6473-51D0-4163-9B6E-5528BB2ECF93} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
+		{3FAE0908-B28C-45AE-83BE-0A91269F971D} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
+		{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6} = {3FAE0908-B28C-45AE-83BE-0A91269F971D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DBEB0F0-6457-4ACB-AE0F-750843B1232C}

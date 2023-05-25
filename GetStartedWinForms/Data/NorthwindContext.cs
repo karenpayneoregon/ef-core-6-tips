@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace GetStartedWinForms.Data;
 
-public class ProductsContext : DbContext
+public class NorthwindContext : DbContext
 {
     public DbSet<Product> Products { get; set; }
     public DbSet<Category> Categories { get; set; }

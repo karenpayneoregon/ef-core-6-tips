@@ -1,12 +1,10 @@
 ﻿# About
 
-[Microsoft source](https://github.com/dotnet/EntityFramework.Docs/blob/main/samples/core/Modeling/ValueConversions/EncryptPropertyValues.cs)
-
-Simple starter code sample for `HasConversion` which in this case takes a string and reverses the string and stores in the table then read back reverses the value back to what was entered.
+Microsoft [simple starter code sample](https://github.com/dotnet/EntityFramework.Docs/blob/main/samples/core/Modeling/ValueConversions/EncryptPropertyValues.cs) for `HasConversion` which in this case takes a string and reverses the string and stores in the table then read back reverses the value back to what was entered.
 
 **Original conversion**
 
-Which is great as it allows a developer to work from a simple example to implement their own logic
+Which allows a developer to work from a simple example to implement their own logic while in this project a NuGet package is used as per below.
 
 ```csharp
 modelBuilder.Entity<User>().Property(e => e.Password).HasConversion(
@@ -16,10 +14,14 @@ modelBuilder.Entity<User>().Property(e => e.Password).HasConversion(
 
 **Current conversion**
 
-Sample to go passed the above.
+The conversion here is done with NuGet package [Inferno](https://www.nuget.org/packages/Inferno/) crypto [library](https://securitydriven.net/inferno/), 
 
 ```csharp
-modelBuilder.Entity<User>().Property(e => e.Password).HasConversion(
-    v => EncryptString(v),
-    v => DecryptString(v));
+modelBuilder.Entity<User>().Property(e => e.Password)
+    .HasConversion(
+        value => value.ToBytes(),
+        value => value.FromBytes());
 ```
+
+![Title](assets/title.png)
+

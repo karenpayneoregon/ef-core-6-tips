@@ -1,5 +1,6 @@
 ﻿using MaxLengthApp.Classes;
 using MaxLengthApp.Data;
+
 // ReSharper disable PossibleMultipleEnumeration
 
 
@@ -9,6 +10,7 @@ internal partial class Program
 {
     static void Main(string[] args)
     {
+
         using var context = new Context();
         
         var models = context.GetModelNames();

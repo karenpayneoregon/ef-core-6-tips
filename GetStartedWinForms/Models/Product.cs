@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace GetStartedWinForms.Models;
+﻿namespace GetStartedWinForms.Models;
 
 public class Product
 {

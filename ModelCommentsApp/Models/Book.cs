@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+#pragma warning disable CS8618
 
 namespace ModelCommentsApp.Models;
 

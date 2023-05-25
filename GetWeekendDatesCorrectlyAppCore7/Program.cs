@@ -12,23 +12,33 @@ internal partial class Program
         context.Database.EnsureDeleted();
         context.Database.EnsureCreated();
 
-        var saturdayOrSundayDelivered = context.Orders.AsEnumerable().Where(o => o.DeliveredDate.IsWeekend()).ToList();
+        var saturdayOrSundayDelivered = context
+            .Orders.AsEnumerable().Where(o => o.DeliveredDate.IsWeekend()).ToList();
             
         var weekEndTable = CreateOrderTable("Weekend");
         foreach (var order in saturdayOrSundayDelivered)
         {
-            weekEndTable.AddRow(order.Id.ToString(), order.OrderDate.ToShortDateString(), order.DeliveredDate.ToString("yyyy-M-d dddd"));
+            weekEndTable.AddRow(
+                order.Id.ToString(), 
+                order.OrderDate.ToShortDateString(), 
+                order.DeliveredDate.ToString("yyyy-M-d dddd"));
         }
 
         AnsiConsole.Write(weekEndTable);
         Console.WriteLine();
 
         var weekDayTable = CreateOrderTable("Weekday");
-        var weekdayDeliveries = context.Orders.AsEnumerable().Where(o => !o.DeliveredDate.IsWeekend()).ToList();
+        var weekdayDeliveries = 
+            context.Orders.AsEnumerable().Where(o => !o.DeliveredDate.IsWeekend()).ToList();
+
         foreach (var order in weekdayDeliveries)
         {
-            weekDayTable.AddRow(order.Id.ToString(), order.OrderDate.ToShortDateString(), order.DeliveredDate.ToString("yyyy-M-d dddd"));
+            weekDayTable.AddRow(
+                order.Id.ToString(), 
+                order.OrderDate.ToShortDateString(), 
+                order.DeliveredDate.ToString("yyyy-M-d dddd"));
         }
+
         AnsiConsole.Write(weekDayTable);
             
         Console.WriteLine();
@@ -41,8 +51,8 @@ internal partial class Program
 
         var groupWeekend1 = context.Orders
             .AsEnumerable()
-            .GroupBy(x => x.DeliveredDate.DayOfWeek)
-            .Where(x => x.Key.IsWeekend())
+            .GroupBy(o => o.DeliveredDate.DayOfWeek)
+            .Where(o => o.Key.IsWeekend())
             .ToList();
 
 

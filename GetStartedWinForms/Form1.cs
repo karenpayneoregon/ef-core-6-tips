@@ -7,7 +7,7 @@ namespace GetStartedWinForms
 {
     public partial class MainForm : Form
     {
-        private ProductsContext dbContext;
+        private NorthwindContext dbContext;
 
         public MainForm()
         {
@@ -18,7 +18,7 @@ namespace GetStartedWinForms
         {
             base.OnLoad(e);
 
-            dbContext = new ProductsContext();
+            dbContext = new NorthwindContext();
 
             // Uncomment the line below to start fresh with a new database.
             // this.dbContext.Database.EnsureDeleted();

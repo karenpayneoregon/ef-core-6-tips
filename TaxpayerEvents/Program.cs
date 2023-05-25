@@ -28,7 +28,7 @@ namespace TaxpayerEvents
                 }
             }
 
-            context.Entry(list.FirstOrDefault()).State = EntityState.Deleted;
+            context.Entry(list.FirstOrDefault()!).State = EntityState.Deleted;
             context.SaveChanges();
         }
     }

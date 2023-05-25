@@ -1,4 +1,5 @@
-﻿namespace NorthWind2020ConsoleAppCore7.Models;
+﻿#pragma warning disable CS8618
+namespace NorthWind2020ConsoleAppCore7.Models;
 
 public class CustomerItem
 {

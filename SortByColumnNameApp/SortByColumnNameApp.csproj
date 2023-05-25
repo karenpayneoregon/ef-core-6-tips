@@ -26,7 +26,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.2" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.5" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -34,8 +34,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <!--<ProjectReference Include="..\EntityFrameworkCoreHelpers\EntityFrameworkCoreHelpers.csproj" />-->
-	  <!--<ProjectReference Include="..\NorthWind2022Library\NorthWind2022Library.csproj" />-->
+	  <ProjectReference Include="..\EntityFrameworkCoreHelpers\EntityFrameworkCoreHelpers.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

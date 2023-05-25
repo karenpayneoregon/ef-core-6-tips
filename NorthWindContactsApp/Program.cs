@@ -4,7 +4,7 @@ using Spectre.Console;
 
 namespace NorthWindContactsApp
 {
-    internal class Program
+    internal partial class Program
     {
         static void Main(string[] args)
         {

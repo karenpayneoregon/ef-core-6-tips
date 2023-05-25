@@ -48,7 +48,7 @@ namespace ParameterizingValuesApp
                 Price = value, 
                 Title = bookTitle, 
                 CategoryId = categoryIdentifier, 
-                Category = context.Categories.FirstOrDefault(x => x.CategoryId == categoryIdentifier)
+                Category = context.Categories.FirstOrDefault(c => c.CategoryId == categoryIdentifier)
             });
 
             value = 25.5m;
@@ -60,7 +60,7 @@ namespace ParameterizingValuesApp
                 Price = value,
                 Title = bookTitle,
                 CategoryId = categoryIdentifier,
-                Category = context.Categories.FirstOrDefault(x => x.CategoryId == categoryIdentifier)
+                Category = context.Categories.FirstOrDefault(c => c.CategoryId == categoryIdentifier)
             });
 
 
@@ -69,7 +69,10 @@ namespace ParameterizingValuesApp
 
             Console.WriteLine(context.ChangeTracker.DebugView.LongView);
 
-            AnsiConsole.MarkupLine($"[white on blue]Record added {(await context.SaveChangesAsync() == 2).RecordAdded()}[/]");
+            AnsiConsole.MarkupLine(
+                $"""
+                [white on blue]Record added {(await context.SaveChangesAsync() == 2).RecordAdded()}[/]
+                """);
 
         }
 
@@ -94,7 +97,10 @@ namespace ParameterizingValuesApp
             Console.WriteLine(context.ChangeTracker.DebugView.LongView);
             Console.WriteLine();
 
-            AnsiConsole.MarkupLine($"[white on blue]Record updated {(await context.SaveChangesAsync() == 1).RecordAdded()}[/]");
+            AnsiConsole.MarkupLine(
+                $"""
+                [white on blue]Record updated {(await context.SaveChangesAsync() == 1).RecordAdded()}[/]
+                """);
 
         }
         private static async Task EditExistingBookPeek()
