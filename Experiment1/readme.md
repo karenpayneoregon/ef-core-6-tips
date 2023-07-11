@@ -2,6 +2,7 @@
 
 Example for executing a stored procedure which was reversed engineered with EF Power Tools.
 
+:heavy_check_mark: run the script first under the Data folder before running this project.
 
 ## Resources
 
