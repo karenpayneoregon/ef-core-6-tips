@@ -50,4 +50,6 @@ public partial class Employees
     public virtual ICollection<Orders> Orders { get; } = new List<Orders>();
 
     public virtual Employees ReportsToNavigationEmployee { get; set; }
+
+    public virtual ICollection<Territories> Territory { get; } = new List<Territories>();
 }

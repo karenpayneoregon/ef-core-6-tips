@@ -15,6 +15,10 @@
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
+         "Name": "[dbo].[BusinessEntityPhone]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Categories]",
          "ObjectType": 0
       },
@@ -43,6 +47,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[EmployeeTerritories]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[OrderDetails]",
          "ObjectType": 0
       },
@@ -59,6 +67,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Region]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Shippers]",
          "ObjectType": 0
       },
@@ -69,6 +81,14 @@
       {
          "Name": "[dbo].[Suppliers]",
          "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Territories]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[uspProductsByCategoryAndSupplier]",
+         "ObjectType": 1
       }
    ],
    "UiHint": "fknjml3\\localdb#9418465e.NorthWind2022.dbo",

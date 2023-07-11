@@ -51,7 +51,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxpayersConcurrencyCheck",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbContextPooling", "DbContextPooling\DbContextPooling.csproj", "{7A53DD7F-8E01-4F05-B65F-600058017396}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NorthToBindingListWinForms", "NorthToBindingListWinForms\NorthToBindingListWinForms.csproj", "{00C0C63D-C137-40C6-82E3-74674D6E83FB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NorthToBindingListWinForms", "NorthToBindingListWinForms\NorthToBindingListWinForms.csproj", "{00C0C63D-C137-40C6-82E3-74674D6E83FB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SelectiveUpdatesApp", "SelectiveUpdatesApp\SelectiveUpdatesApp.csproj", "{BD0D96F4-7D9B-4DE2-A474-F42160DD9D92}"
 EndProject
@@ -75,7 +75,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EF_IdentityOptions", "EF_Id
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tinkering", "Tinkering", "{3FAE0908-B28C-45AE-83BE-0A91269F971D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Experiment1", "Experiment1\Experiment1.csproj", "{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Experiment1", "Experiment1\Experiment1.csproj", "{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

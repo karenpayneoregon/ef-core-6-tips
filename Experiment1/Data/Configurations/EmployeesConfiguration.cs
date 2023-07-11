@@ -46,6 +46,24 @@ namespace Experiment1.Data.Configurations
 
             entity.HasOne(d => d.ReportsToNavigationEmployee).WithMany(p => p.InverseReportsToNavigationEmployee).HasForeignKey(d => d.ReportsToNavigationEmployeeID);
 
+            entity.HasMany(d => d.Territory).WithMany(p => p.Employee)
+            .UsingEntity<Dictionary<string, object>>(
+                "EmployeeTerritories",
+                r => r.HasOne<Territories>().WithMany()
+                    .HasForeignKey("TerritoryID")
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_EmployeeTerritories_Territories"),
+                l => l.HasOne<Employees>().WithMany()
+                    .HasForeignKey("EmployeeID")
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_EmployeeTerritories_Employees"),
+                j =>
+                {
+                    j.HasKey("EmployeeID", "TerritoryID").IsClustered(false);
+                    j.HasIndex(new[] { "TerritoryID" }, "IX_EmployeeTerritories_TerritoryID");
+                    j.IndexerProperty<string>("TerritoryID").HasMaxLength(20);
+                });
+
             OnConfigurePartial(entity);
         }
 
