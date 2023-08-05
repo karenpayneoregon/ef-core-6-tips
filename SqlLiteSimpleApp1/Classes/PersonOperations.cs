@@ -41,7 +41,7 @@ public class PersonOperations
     {
         var context = new Context();
         await using var _ = context;
-        return await context.Person.FindAsync(id).ConfigureAwait(false);
+        return await context.Person.FindAsync(id);
     }
 
     public static async Task<int> Add(Person person)
@@ -49,20 +49,9 @@ public class PersonOperations
         var context = new Context();
         await using var _ = context;
         context.Add(person);
-        return await context.SaveChangesAsync().ConfigureAwait(false);
+        return await context.SaveChangesAsync();
     }
 
-    public static async Task<int> EditFirstName(int id, string newFirstName)
-    {
-        var context = new Context();
-        await using var _ = context;
-        var editPerson = context.Person.FirstOrDefault(p => p.Id == 2);
-        if (editPerson is { })
-        {
-            editPerson.FirstName = newFirstName;
-        }
-        return await context.SaveChangesAsync().ConfigureAwait(false);
-    }
     public static async Task<int> Update(Person person)
     {
         var context = new Context();
