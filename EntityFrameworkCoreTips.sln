@@ -77,6 +77,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tinkering", "Tinkering", "{
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Experiment1", "Experiment1\Experiment1.csproj", "{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SqlLiteSimpleApp1", "SqlLiteSimpleApp1\SqlLiteSimpleApp1.csproj", "{DBBD3136-522B-43F5-A45B-CB22EB58BE06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -195,6 +197,10 @@ Global
 		{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBBD3136-522B-43F5-A45B-CB22EB58BE06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBBD3136-522B-43F5-A45B-CB22EB58BE06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBBD3136-522B-43F5-A45B-CB22EB58BE06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBBD3136-522B-43F5-A45B-CB22EB58BE06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -230,6 +236,7 @@ Global
 		{D4FC6473-51D0-4163-9B6E-5528BB2ECF93} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 		{3FAE0908-B28C-45AE-83BE-0A91269F971D} = {8BEE2EDB-AFBE-40B2-B10B-BF45A1335208}
 		{3875305F-D52A-41EF-8B37-6BF9ADF6F0F6} = {3FAE0908-B28C-45AE-83BE-0A91269F971D}
+		{DBBD3136-522B-43F5-A45B-CB22EB58BE06} = {B6C0E962-8124-43A7-B656-56B3D8435EA9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0DBEB0F0-6457-4ACB-AE0F-750843B1232C}
