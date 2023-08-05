@@ -46,4 +46,5 @@ Some can be improved, have at it.
 
 - To a file using SeriLog by day under the debug folder in LogFiles folder
 - Setup is in Classes\SetupLogging.cs
+- Make the connection string invalid to test logging.
 

@@ -53,8 +53,7 @@ public class PersonOperations
         var trackedPerson = await context.Person.FindAsync(person.Id).ConfigureAwait(false);
 
         context.Entry(trackedPerson!).CurrentValues.SetValues(person);
-        var affected = await context.SaveChangesAsync().ConfigureAwait(false);
-        return affected;
+        return await context.SaveChangesAsync().ConfigureAwait(false); ;
     }
 
     public static async Task<int> Remove(Person person)
