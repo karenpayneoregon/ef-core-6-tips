@@ -1,20 +1,21 @@
-﻿using SelectiveUpdatesApp.Models;
-using System.Reflection;
+﻿namespace SelectiveUpdatesApp.Classes;
 
-
-namespace SelectiveUpdatesApp.Classes;
-
-internal static class Helpers
-{
-
-    public static string Colorize(this string source)
+    internal static class Helpers
     {
-        var result = source;
-        foreach (PropertyInfo p in typeof(Person).GetProperties())
+
+        public static string Colorize<T>(this string source) where T : new()
         {
-            result = result.Replace(p.Name, $"[green3_1]{p.Name}[/]");
+
+            var result = typeof(T)
+                .GetProperties()
+                .Aggregate(source, (current, p) =>
+                    current.Replace(p.Name, $"[green3_1]{p.Name}[/]"));
+
+            result = result.Replace("Originally", "[white on blue]Originally[/]");
+
+            return result;
         }
 
-        return result;
     }
-}
+
+

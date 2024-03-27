@@ -27,9 +27,9 @@ internal partial class Program
         Person person = context.Person.FirstOrDefault(x => x.Id == 3);
 
         if (person is not null)
-        {
+        {       
             person.FirstName = "Billy bob";
-            AnsiConsole.MarkupLine(context.ChangeTracker.DebugView.LongView.Colorize());
+            AnsiConsole.MarkupLine(context.ChangeTracker.DebugView.LongView.Colorize<Person>());
             context.SaveChanges();
         }
 

@@ -8,14 +8,22 @@ namespace TaxpayerLibraryEntityVersion.Models;
 /// </summary>
 public class EntityChangeItem
 {
+    private object _originalValue;
+
     /// <summary>
     /// Property name to get values for
     /// </summary>
     public  string PropertyName { get; set; }
+
     /// <summary>
     /// Original value for <see cref="PropertyName"/>
     /// </summary>
-    public object OriginalValue { get; set; }
+    public object OriginalValue
+    {
+        get => _originalValue;
+        set => _originalValue = value ?? "null";
+    }
+
     /// <summary>
     /// Current value for <see cref="PropertyName"/>
     /// </summary>
@@ -24,8 +32,8 @@ public class EntityChangeItem
     public string[] ItemArray => new[]
     {
         PropertyName,
-        OriginalValue.ToString(),
-        CurrentValue.ToString()
+        OriginalValue!.ToString(),
+        CurrentValue!.ToString()
     };
 
     public override string ToString() => $"{PropertyName} | {OriginalValue} | {CurrentValue}";

@@ -7,6 +7,8 @@ using TaxpayerMocking.LanguageExtensions;
 using static TaxpayerMocking.Classes.Helpers;
 using B = Bogus.Extensions.UnitedStates.ExtensionsForUnitedStates;
 
+using static Bogus.Randomizer;
+
 namespace TaxpayerMocking.Classes;
 
 internal class SetupDatabase
@@ -40,7 +42,7 @@ internal class SetupDatabase
         context.Database.EnsureDeleted();
         context.Database.EnsureCreated();
     }
-    public static void PopulateData(DbContext context, int count = 10)
+    public static void PopulateData(DbContext context, int count = 5)
     {
         /*
          * Add child table first as taxpayers is dependent on categories
@@ -49,7 +51,7 @@ internal class SetupDatabase
         context.SaveChanges();
 
         /*
-         * Add taxpayers in tangent with foreign keys to categories
+         * Add taxpayers in tangent with foreign keys to categorize
          */
         context.AddRange(Taxpayers(count));
         context.SaveChanges();
@@ -62,8 +64,9 @@ internal class SetupDatabase
     /// </summary>
     /// <param name="count">how many records to generate</param>
     /// <returns></returns>
-    private static List<Taxpayer> Taxpayers(int count = 10)
+    private static List<Taxpayer> Taxpayers(int count = 5)
     {
+        Seed = new Random(338);
 
         Faker<Taxpayer> fakeTaxpayer = new Faker<Taxpayer>()
             .RuleFor(t => t.FirstName, f => 
@@ -94,13 +97,12 @@ internal class SetupDatabase
     /// </summary>
     /// <returns></returns>
     public static List<Category> Categories() =>
-        new()
-        {
-            new () { Description = "Needs review" },
-            new () { Description = "Incomplete" },
-            new () { Description = "Rejected" },
-            new () { Description = "Complete" }
-        };
+    [
+        new() { Description = "Needs review" },
+        new() { Description = "Incomplete" },
+        new() { Description = "Rejected" },
+        new() { Description = "Complete" }
+    ];
 
     /// <summary>
     /// Example for using <see cref="Bogus"/> to generate a random SSN, in this case with dashes.

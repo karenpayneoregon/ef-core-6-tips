@@ -178,7 +178,7 @@ public static class EntityExtensions
                 let comment = property.GetAnnotations().FirstOrDefault(x => x.Name == RelationalAnnotationNames.Comment)
                 select comment is not null
                     ? new ModelComment() { Name = property.Name, Comment = comment.Value!.ToString() }
-                    : new ModelComment() { Name = property.Name, Comment = null });
+                    : new ModelComment() { Name = property.Name, Comment = property.Name });
         }
 
         return commentList;

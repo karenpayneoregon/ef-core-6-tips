@@ -1,0 +1,43 @@
+﻿{
+   "CodeGenerationMode": 3,
+   "ContextClassName": "C:\\OED\\DotnetLand\\VS2022\\EntityFrameworkCoreTips\\SqlLiteSimpleApp1\\Sample1.dbContext",
+   "ContextNamespace": null,
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": true,
+   "ModelNamespace": null,
+   "OutputContextPath": "Data1",
+   "OutputPath": "OtherModels",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "SqlLiteSimpleApp1",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "Person",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "C:\\OED\\DotnetLand\\VS2022\\EntityFrameworkCoreTips\\SqlLiteSimpleApp1\\Sample1.db",
+   "UncountableWords": null,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": true,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false
+}

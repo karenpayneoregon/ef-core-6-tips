@@ -85,6 +85,13 @@ namespace TaxpayersConcurrencyCheck.Classes
                                 
                                 var value = proposedValues[property];
                                 var dbValue = databaseValues?[property];
+
+                                // assertion added 3/2024
+                                if (value is null || dbValue is null)
+                                {
+                                    continue;
+                                }
+
                                 if (property.IsKey())
                                 {
                                     builder.AppendLine($"Key {value,22}");

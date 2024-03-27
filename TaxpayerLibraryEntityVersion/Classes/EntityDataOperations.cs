@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using TaxpayerLibraryEntityVersion.Data;
 using TaxpayerLibraryEntityVersion.Models;
@@ -36,26 +29,27 @@ namespace TaxpayerLibraryEntityVersion.Classes
         {
             await using var context = new OedContext();
 
-            Taxpayer taxpayer = (await context.Taxpayer.FirstOrDefaultAsync(payer => payer.Id == 1))!;
+            int id = 1;
+            Taxpayer taxpayer = (await context.Taxpayer.FirstOrDefaultAsync(payer => payer.Id == id))!;
 
-            taxpayer.FirstName = "Mads";
+            taxpayer.FirstName = "Karen";
             taxpayer.Pin = "9999";
 
             List<EntityChangeItem> changes = new();
 
             var entry = context.Entry(taxpayer);
 
-            foreach (IProperty item in entry.CurrentValues.Properties)
+            foreach (IProperty property in entry.CurrentValues.Properties)
             {
-                PropertyEntry propEntry = entry.Property(item.Name);
+                var propertyEntry = entry.Property(property.Name);
 
-                if (!propEntry.IsModified) continue;
+                if (!propertyEntry.IsModified) continue;
 
                 changes.Add(new EntityChangeItem()
                 {
-                    PropertyName = item.Name, 
-                    OriginalValue = propEntry.OriginalValue, 
-                    CurrentValue = propEntry.CurrentValue
+                    PropertyName = property.Name, 
+                    OriginalValue = propertyEntry.OriginalValue, 
+                    CurrentValue = propertyEntry.CurrentValue
                 });
             }
 
@@ -74,7 +68,7 @@ namespace TaxpayerLibraryEntityVersion.Classes
 
             Taxpayer taxpayer = (await context.Taxpayer.FirstOrDefaultAsync(payer => payer.Id == 1))!;
 
-            taxpayer.FirstName = "Mads";
+            taxpayer.FirstName = "Karen";
 
 
             var originalFirstName = context

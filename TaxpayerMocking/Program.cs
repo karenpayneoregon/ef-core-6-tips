@@ -9,7 +9,7 @@ namespace TaxpayerMocking
         static async Task Main(string[] args)
         {
 
-            SetupDatabase.Initialize(25);
+            SetupDatabase.Initialize(15);
             List<Taxpayer> taxpayerList = SetupDatabase.GetTaxpayers();
 
             /*
@@ -38,9 +38,6 @@ namespace TaxpayerMocking
             AnsiConsole.Write(viewTable);
             
             Console.WriteLine();
-            AnsiConsole.MarkupLine("[cyan]Get changes, press a key to continue[/]");
-            Console.ReadLine();
-            AnsiConsole.Clear();
 
             var changes = await EntityDataOperations.GetOriginalValuesAfterEditingVersion1();
 
